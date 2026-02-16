@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Icon from '../../../components/AppIcon';
 
 const QuickActions = () => {
-    const cards = [
+  const cards = [
     {
       id: 1,
       title: "Transparencia Total",
@@ -40,12 +40,12 @@ const QuickActions = () => {
   return (
     <section className="py-24 relative overflow-hidden">
       <div className="absolute inset-0 z-0">
-         <img 
-            src="/assets/images/9.jpg" 
-            alt="Fondo Industrial" 
-            className="w-full h-full object-cover grayscale"
-         />
-         <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/75 to-slate-900/70" />
+        <img
+          src="/assets/images/9.jpg"
+          alt="Fondo Industrial"
+          className="w-full h-full object-cover grayscale"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/75 to-slate-900/70" />
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -55,8 +55,8 @@ const QuickActions = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-12 relative z-10"
         >
-          <h2 className="text-3xl md:text-5xl font-black text-[#C00000] mb-6">
-            Tu Infraestructura, Tu Voz
+          <h2 className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-red-500 to-red-900 drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)] tracking-tighter uppercase mb-4">
+            Tu Infraestructura, <br className="md:hidden" /> <span className="text-white">Tu Voz</span>
           </h2>
           <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto font-light">
             Tres pilares fundamentales de nuestro compromiso con los ciudadanos de Anzoátegui

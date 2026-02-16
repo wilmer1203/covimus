@@ -10,6 +10,7 @@ import FeaturedProjects from './components/FeaturedProjects';
 import SocialProof from './components/SocialProof';
 import InstitutionalAlliances from './components/InstitutionalAlliances';
 import QuickActions from './components/QuickActions';
+import SEO from '../../components/SEO';
 
 const Homepage = () => {
   useEffect(() => {
@@ -25,17 +26,13 @@ const Homepage = () => {
         transition={{ duration: 0.3 }}
         className="min-h-screen bg-background"
       >
-        <Helmet>
-          <title>COVIMUS - Vialidad e Infraestructura del Municipio Sotillo</title>
-          <meta
-            name="description"
-            content="COVIMUS EPS - Construyendo el futuro de Puerto La Cruz. Expertos en vialidad, asfalto y obras civiles en el Municipio Sotillo para el desarrollo de Anzoátegui."
-          />
-          <meta name="keywords" content="COVIMUS, Puerto La Cruz, Sotillo, asfalto, vialidad, infraestructura, EPS, gobierno municipal" />
-          <meta property="og:title" content="COVIMUS - Construyendo el Futuro de Sotillo" />
-          <meta property="og:description" content="Corporación Municipal de Vialidad e Infraestructura - Transformando comunidades en Puerto La Cruz con transparencia y compromiso." />
-          <meta property="og:type" content="website" />
-        </Helmet>
+        <SEO
+          title="Vialidad e Infraestructura del Municipio Sotillo"
+          description="COVIMUS EPS - Construyendo el futuro de Puerto La Cruz. Expertos en vialidad, asfalto y obras civiles en el Municipio Sotillo para el desarrollo de Anzoátegui."
+          keywords="COVIMUS, Puerto La Cruz, Sotillo, asfalto, vialidad, infraestructura, EPS, gobierno municipal"
+          ogTitle="COVIMUS - Construyendo el Futuro de Sotillo"
+          ogDescription="Corporación Municipal de Vialidad e Infraestructura - Transformando comunidades en Puerto La Cruz con transparencia y compromiso."
+        />
 
         <Header />
 

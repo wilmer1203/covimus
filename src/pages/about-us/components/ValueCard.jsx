@@ -16,8 +16,8 @@ const ValueCard = ({ value, index }) => {
       className="relative group h-full"
     >
       {/* Glow effect background */}
-      <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-accent rounded-2xl opacity-0 group-hover:opacity-100 transition duration-500 blur-sm pointer-events-none" />
-      
+      <div className="absolute -inset-0.5 bg-gradient-to-r from-red-600 to-[#FFCC00] rounded-2xl opacity-0 group-hover:opacity-100 transition duration-500 blur-sm pointer-events-none" />
+
       <div className="relative h-full bg-slate-900 border border-white/10 rounded-2xl p-8 flex flex-col items-start overflow-hidden">
         {/* Decorative pattern */}
 

@@ -9,6 +9,7 @@ import Icon from '../../components/AppIcon';
 import ContactHero from './components/ContactHero';
 import ContactForm from './components/ContactForm';
 import ContactSidebar from './components/ContactSidebar';
+import SEO from '../../components/SEO';
 
 
 const ContactPage = () => {
@@ -27,14 +28,13 @@ const ContactPage = () => {
         transition={{ duration: 0.3 }}
         className="min-h-screen bg-background"
       >
-        <Helmet>
-          <title>Atención al Ciudadano - COVIMUS | Portal de Reportes</title>
-          <meta name="description" content="Portal de atención ciudadana de COVIMUS. Reporta incidencias, solicita servicios o envía sugerencias para mejorar tu comunidad en el Municipio Sotillo." />
-          <meta name="keywords" content="Contacto COVIMUS, Reportes, Denuncias, Obras Públicas, Puerto La Cruz, Atención Ciudadana" />
-          <meta property="og:title" content="Atención al Ciudadano - COVIMUS" />
-          <meta property="og:description" content="¿Tienes un reporte sobre vialidad o infraestructura? Contáctanos directamente a través de nuestro portal oficial." />
-          <meta property="og:type" content="website" />
-        </Helmet>
+        <SEO
+          title="Atención al Ciudadano"
+          description="Portal de atención ciudadana de COVIMUS. Reporta incidencias, solicita servicios o envía sugerencias para mejorar tu comunidad en el Municipio Sotillo."
+          keywords="Contacto COVIMUS, Reportes, Denuncias, Obras Públicas, Puerto La Cruz, Atención Ciudadana"
+          ogTitle="Atención al Ciudadano - COVIMUS"
+          ogDescription="¿Tienes un reporte sobre vialidad o infraestructura? Contáctanos directamente a través de nuestro portal oficial."
+        />
 
         <Header />
 
@@ -53,38 +53,7 @@ const ContactPage = () => {
                     Complete el formulario con precisión. Su reporte activa nuestros equipos de respuesta inmediata.
                   </p>
                 </div>
-
                 <ContactForm />
-
-                {/* Contractor Call to Action
-                <div className="p-1 rounded-3xl bg-gradient-to-r from-[#FFCC00] via-yellow-600 to-[#243F60]">
-                  <div className="bg-slate-950 rounded-[22px] p-8 md:p-10 relative overflow-hidden group">
-
-                    <div className="absolute top-0 right-0 w-64 h-64 bg-[#FFCC00]/10 rounded-full blur-[80px] translate-x-1/2 -translate-y-1/2 group-hover:bg-[#FFCC00]/20 transition-all duration-700" />
-
-                    <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
-                      <div className="flex items-center gap-6">
-                        <div className="size-20 rounded-2xl bg-slate-900 flex items-center justify-center border border-white/10 text-[#FFCC00] shadow-xl shadow-[#FFCC00]/5 group-hover:scale-110 transition-transform duration-500">
-                          <Icon name="Briefcase" size={40} />
-                        </div>
-                        <div className="text-center md:text-left">
-                          <h3 className="text-2xl md:text-3xl font-black text-white mb-2">
-                            ¿Eres <span className="text-[#FFCC00]">Contratista?</span>
-                          </h3>
-                          <p className="text-slate-400 max-w-md font-medium">
-                            Accede al Registro Nacional de Contratistas y participa en nuestras licitaciones públicas.
-                          </p>
-                        </div>
-                      </div>
-
-                      <button className="whitespace-nowrap px-8 py-4 bg-[#FFCC00] hover:bg-yellow-400 text-slate-900 font-black text-lg rounded-xl transition-all shadow-lg shadow-[#FFCC00]/20 relative z-10 hover:scale-105 active:scale-95 flex items-center gap-2">
-                        Portal de Proveedores
-                        <Icon name="ArrowRight" size={20} />
-                      </button>
-                    </div>
-                  </div>
-                </div> */}
-
               </div>
 
               {/* Right Column: Map & Info (5 cols) */}

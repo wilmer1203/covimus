@@ -4,7 +4,7 @@ export const highCommand = {
         position: "Alcalde del Municipio Sotillo",
         roleTag: "Autoridad Suprema",
         bio: "Líder visionario y estratega con amplia trayectoria en la administración pública y defensa integral. Su gestión se caracteriza por la disciplina operativa y el compromiso social directo.",
-        image: "/assets/images/Jesus.jpeg",
+        image: "/assets/images/jesus.jpg",
         highlights: ["99% Accionista Mayoritario", "Plan Rector de Desarrollo", "Gestión Social Eficiente"],
         contextImage: "/assets/images/av_paseo.png",
         education: [
@@ -50,7 +50,7 @@ export const highCommand = {
 };
 
 export const leadershipTeam = [
-     {
+    {
         id: "Vicepresidencia",
         name: "Vacante / Por Designar",
         position: "Vicepresidente",
@@ -63,36 +63,36 @@ export const leadershipTeam = [
             "Coordinar la ejecución de los planes operativos anuales.",
             "Supervisar el desempeño de las gerencias adscritas."
         ]
-     },
-     {
+    },
+    {
         id: "Administración",
         name: "Lcda. Ramona Sánchez",
         position: "Gerente Administración",
         credentials: "Licenciada en Contaduría Pública",
         bio: "Garante de la salud financiera de la institución. Su gestión transparente asegura la ejecución eficiente de los recursos asignados al desarrollo municipal.",
-        image: "https://img.rocket.new/generatedImages/rocket_gen_img_1ddd139a7-1763300023295.png",
+        image: "/assets/images/placeholder_authority.png",
         highlights: ["Auditoría", "Recursos Públicos"],
         functions: [
             "Administrar los recursos financieros de la empresa.",
             "Elaborar y controlar el presupuesto anual.",
             "Supervisar los procesos contables y tributarios."
         ]
-     },
-     {
+    },
+    {
         id: "Talento Humano",
-        name: "Lic. María Rodríguez", 
+        name: "Lic. María Rodríguez",
         position: "Gerente de RRHH",
         credentials: "Gestión de Talento Humano",
         bio: "Encargada de la gestión del capital humano, bienestar laboral y capacitación continua del personal de COVIMUS.",
-        image: "/assets/images/Impacto Real_1.jpg", 
+        image: "/assets/images/Impacto Real_1.jpg",
         highlights: ["Bienestar Social", "Capacitación"],
         functions: [
             "Gestionar el reclutamiento y selección de personal.",
             "Velar por el cumplimiento de la normativa laboral.",
             "Administrar la nómina y beneficios sociales."
         ]
-     },
-     {
+    },
+    {
         id: "Consultoría",
         name: "Abg. Eduardo Chivico",
         position: "Consultor Jurídico",
@@ -101,12 +101,12 @@ export const leadershipTeam = [
         image: "https://img.rocket.new/generatedImages/rocket_gen_img_1d9438107-1763299090100.png",
         highlights: ["Derecho Administrativo", "Defensa Patrimonial"],
         functions: [
-             "Asesorar legalmente a la Junta Directiva y Presidencia.",
-             "Revisar y redactar contratos y convenios.",
-             "Representar judicialmente a la empresa."
+            "Asesorar legalmente a la Junta Directiva y Presidencia.",
+            "Revisar y redactar contratos y convenios.",
+            "Representar judicialmente a la empresa."
         ]
-     },
-     {
+    },
+    {
         id: "Operaciones",
         name: "Ing. Carlos Pérez",
         position: "Gerente de Operaciones",
@@ -119,8 +119,8 @@ export const leadershipTeam = [
             "Coordinar el mantenimiento de la flota de maquinaria pesada.",
             "Garantizar el suministro de mezcla asfáltica para las obras."
         ]
-     },
-     {
+    },
+    {
         id: "Proyectos",
         name: "Arq. Ana González",
         position: "Gerente de Proyectos",
@@ -133,8 +133,8 @@ export const leadershipTeam = [
             "Realizar inspecciones técnicas de obras.",
             "Controlar el avance físico-financiero de los proyectos."
         ]
-     },
-     {
+    },
+    {
         id: "Compras",
         name: "Lic. José López",
         position: "Gerente de Compras",
@@ -147,8 +147,8 @@ export const leadershipTeam = [
             "Mantener el registro de proveedores actualizado.",
             "Controlar el inventario de almacenes."
         ]
-     },
-     {
+    },
+    {
         id: "Seguridad",
         name: "Sup. Miguel Torres",
         position: "Jefe de Seguridad",
@@ -161,25 +161,25 @@ export const leadershipTeam = [
             "Implementar normas de higiene y seguridad industrial.",
             "Controlar el acceso de personas y vehículos."
         ]
-     }
+    }
 ];
 
 export const highLevelOrg = [
-    { 
-      id: "asamblea", 
-      name: "Asamblea General Accionistas", 
-      position: "Asamblea General de Accionistas",
-      image: null,
-      credentials: "Máxima Autoridad",
-      functions: ["Aprobar estados financieros.", "Designar la Junta Directiva.", "Modificar estatutos sociales."]
+    {
+        id: "asamblea",
+        name: "Asamblea General Accionistas",
+        position: "Asamblea General de Accionistas",
+        image: null,
+        credentials: "Máxima Autoridad",
+        functions: ["Aprobar estados financieros.", "Designar la Junta Directiva.", "Modificar estatutos sociales."]
     },
-    { 
-      id: "junta", 
-      name: "Junta Directiva", 
-      position: "Junta Directiva",
-      image: null,
-      credentials: "Cuerpo Colegiado",
-      functions: ["Definir las políticas estratégicas.", "Supervisar la gestión de la Presidencia.", "Aprobar contratos de gran envergadura."]
+    {
+        id: "junta",
+        name: "Junta Directiva",
+        position: "Junta Directiva",
+        image: null,
+        credentials: "Cuerpo Colegiado",
+        functions: ["Definir las políticas estratégicas.", "Supervisar la gestión de la Presidencia.", "Aprobar contratos de gran envergadura."]
     }
 ];
 

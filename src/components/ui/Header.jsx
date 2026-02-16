@@ -19,9 +19,9 @@ const Header = () => {
   }, []);
 
   const navigationItems = [
-    { path: '/homepage', label: 'Inicio', icon: 'Home' },
+    { path: '/', label: 'Inicio', icon: 'Home' },
     { path: '/about-us', label: 'Nosotros', icon: 'Users' },
-    { path: '/autoridades', label: 'Autoridades', icon: 'Shield' },
+    // { path: '/autoridades', label: 'Autoridades', icon: 'Shield' },
     { path: '/projects', label: 'Proyectos', icon: 'Briefcase' },
   ];
 
@@ -32,7 +32,7 @@ const Header = () => {
       <header className={`header-glass transition-all duration-500 py-0 ${isScrolled ? 'header-glass-scrolled' : 'shadow-none'}`}>
         <div className="header-container">
           <div className="header-content">
-            <Link to="/homepage" className="header-logo">
+            <Link to="/" className="header-logo">
               <div className="header-logo-icon py-1">
                 <Image
                   src="/assets/logo.jpg"
@@ -42,31 +42,22 @@ const Header = () => {
               </div>
             </Link>
 
-            <nav className="header-nav">
-              {navigationItems?.map((item) => (
+            {/* Desktop Navigation */}
+            <nav className="header-nav hidden lg:flex" aria-label="Navegación principal">
+              {navigationItems.map((item) => (
                 <Link
-                  key={item?.path}
-                  to={item?.path}
-                  className={`header-nav-link ${isActivePath(item?.path) ? 'active' : ''}`}
+                  key={item.path}
+                  to={item.path}
+                  aria-label={`Ir a ${item.label}`}
+                  className={`header-nav-link ${isActivePath(item.path) ? 'active' : ''}`}
                 >
-                  {item?.label}
+                  {item.label}
                 </Link>
               ))}
               <Link
                 to="/contact"
-                className="ml-4 px-6 py-2 rounded-lg font-semibold transition-all duration-300"
-                style={{
-                  background: 'var(--color-accent)',
-                  color: 'var(--color-accent-foreground)',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'scale(1.05)';
-                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(250, 204, 21, 0.3)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'scale(1)';
-                  e.currentTarget.style.boxShadow = 'none';
-                }}
+                aria-label="Ir a Atención al Ciudadano"
+                className="ml-4 px-6 py-2 rounded-lg font-semibold transition-all duration-300 bg-accent text-accent-foreground hover:scale-105"
               >
                 Atención al Ciudadano
               </Link>
@@ -81,7 +72,7 @@ const Header = () => {
             </button>
           </div>
         </div>
-      </header>
+      </header >
       <MobileMenu
         isOpen={isMobileMenuOpen}
         onClose={() => setIsMobileMenuOpen(false)}

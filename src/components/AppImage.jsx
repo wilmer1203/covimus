@@ -4,6 +4,7 @@ function Image({
   src,
   alt = "Image Name",
   className = "",
+  loading = 'lazy',
   ...props
 }) {
 
@@ -12,6 +13,7 @@ function Image({
       src={src}
       alt={alt}
       className={className}
+      loading={loading}
       onError={(e) => {
         e.target.src = "/assets/images/no_image.png"
       }}

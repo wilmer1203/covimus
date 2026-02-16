@@ -11,7 +11,7 @@ const Footer = () => {
       links: [
         { label: 'Inicio', path: '/homepage' },
         { label: 'Nosotros', path: '/about-us' },
-        { label: 'Autoridades', path: '/authorities' },
+        // { label: 'Autoridades', path: '/authorities' },
         { label: 'Proyectos', path: '/projects' },
       ],
     },
@@ -32,18 +32,18 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-6">
-               <div className="p-2 bg-[#FFCC00] rounded-lg text-slate-900">
-                  <Icon name="Building2" size={24} />
-               </div>
-               <div>
-                  <h3 className="text-xl font-black text-white tracking-tight">COVIMUS</h3>
-                  <p className="text-[10px] uppercase tracking-widest text-[#FFCC00] font-bold">Corporación de Vialidad</p>
-               </div>
+              <div className="p-2 bg-[#FFCC00] rounded-lg text-slate-900">
+                <Icon name="Building2" size={24} />
+              </div>
+              <div>
+                <h3 className="text-xl font-black text-white tracking-tight">COVIMUS</h3>
+                <p className="text-[10px] uppercase tracking-widest text-[#FFCC00] font-bold">Corporación de Vialidad</p>
+              </div>
             </div>
             <p className="text-slate-500 text-sm leading-relaxed max-w-sm mb-6">
               Construyendo el futuro de Puerto La Cruz con transparencia, compromiso y calidad. Infraestructura al servicio del ciudadano.
             </p>
-             <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4">
               <a
                 href="https://www.instagram.com/covimusplc?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                 target="_blank"
@@ -93,12 +93,12 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-slate-900 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-medium text-slate-600">
-           <p>© {currentYear} COVIMUS. Todos los derechos reservados.</p>
-           <p className="flex items-center gap-2">
-              <span>RIF: G-200088532</span>
-              <span className="w-1 h-1 rounded-full bg-slate-700" />
-              <span>Puerto La Cruz, Venezuela</span>
-           </p>
+          <p>© {currentYear} COVIMUS. Todos los derechos reservados.</p>
+          <p className="flex items-center gap-2">
+            <span>RIF: G-200088532</span>
+            <span className="w-1 h-1 rounded-full bg-slate-700" />
+            <span>Puerto La Cruz, Venezuela</span>
+          </p>
         </div>
       </div>
     </footer>
