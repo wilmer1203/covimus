@@ -66,7 +66,7 @@ export const leadershipTeam = [
     },
     {
         id: "Administración",
-        name: "Lcda. Ramona Sánchez",
+        name: "Lic. Ramona Sánchez",
         position: "Gerente Administración",
         credentials: "Licenciada en Contaduría Pública",
         bio: "Garante de la salud financiera de la institución. Su gestión transparente asegura la ejecución eficiente de los recursos asignados al desarrollo municipal.",
