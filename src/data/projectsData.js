@@ -4,7 +4,7 @@ export const projects = [
     name: "Mejoramiento del Espigón",
     category: "infrastructure",
     categoryIcon: "Construction",
-    municipality: "Paseo Colón",
+    municipality: "Paseo La Cruz y El Mar",
     description: "Mejoramiento de la superficie con material granular.",
     fullDescription: "Como parte del plan integral de mantenimiento de infraestructuras urbanas, la Corporación de Vialidad e Infraestructura del municipio Sotillo (Covimus) ejecuta trabajo de mejoramiento y estabilización del terreno del espigón del emblemático Paseo de la Cruz y el Mar. La intervención técnica consiste en el mejoramiento de la superficie con material granular (ripio) en aproximadamente 200 metros, y su posterior compactación con maquinaria pesada, garantizando una base sólida y duradera para el tránsito en esta zona estratégica de la costa. Con estas acciones, el Alcalde de Sotillo @jesusmarcanot reafirma el compromiso de la recuperación de los espacios públicos y la optimización de la infraestructura vial de la ciudad.",
     images: [
@@ -24,17 +24,16 @@ export const projects = [
     contractor: "Covimus",
     coordinates: { lat: 10.220913, lng: -64.641596 },
     impact: "Recuperación de espacios públicos y optimización vial.",
-    impact: "Recuperación de espacios públicos y optimización vial.",
     testimonial: "El cambio es notable. Antes caminar por aquí era difícil por el terreno irregular, ahora se siente mucho más firme y seguro para venir con la familia.",
     testimonialAuthor: "Luisa Rodríguez",
-    testimonialRole: "Vecina de Paseo Colón"
+    testimonialRole: "Vecina de Paseo La Cruz y El Mar"
   },
   {
     id: 2,
     name: "Estacionamiento Paseo La Cruz y El Mar",
     category: "infrastructure",
     categoryIcon: "Construction",
-    municipality: "Paseo Colón",
+    municipality: "Paseo La Cruz y El Mar",
     description: "Recuperación integral, demarcación y asfaltado del estacionamiento.",
     fullDescription: "En el marco de la recuperación de espacios públicos liderada por el Alcalde Jesús Marcano Tabata, se ejecutó la rehabilitación integral del estacionamiento del Paseo de la Cruz y el Mar. La obra comprendió la colocación de aproximadamente 350 toneladas de asfalto y la demarcación vial de 3,000 m², garantizando el ordenamiento y la seguridad en este punto clave para el esparcimiento familiar. Esta intervención reafirma el compromiso de la gestión municipal, con el apoyo del gobernador Luis Marcano y el presidente Nicolás Maduro, de elevar la calidad de vida de los ciudadanos y potenciar la infraestructura turística de Puerto La Cruz.",
     images: [
@@ -56,8 +55,7 @@ export const projects = [
     beneficiaries: "2,000 m²",
     contractor: "Covimus",
     coordinates: { lat: 10.227253, lng: -64.634818 },
-    impact: "Organización vial y mejora turística del Paseo Colón.",
-    impact: "Organización vial y mejora turística del Paseo Colón.",
+    impact: "Organización vial y mejora turística del Paseo La Cruz y El Mar.",
     testimonial: "Quedó espectacular el estacionamiento. Hacía falta este orden para quienes visitamos el Paseo los fines de semana. ¡Excelente trabajo!",
     testimonialAuthor: "José Miguel Silva",
     testimonialRole: "Visitante Frecuente"
@@ -326,14 +324,13 @@ export const projects = [
     contractor: "Covimus",
     coordinates: { lat: 10.204096, lng: -64.636681 },
     impact: "Recuperación de arteria vial principal con dignidad y esfuerzo.",
-    impact: "Recuperación de arteria vial principal con dignidad y esfuerzo.",
     testimonial: "Tenía años esperando ver la Av. Bolívar así. El asfalto quedó como una mesa de billar. Da gusto transitar por aquí ahora.",
     testimonialAuthor: "Carmen Elena Velásquez",
     testimonialRole: "Conductora y Habitante"
   },
   {
     id: 12,
-    name: "Rehabilitación Vial de la Avenida 5 de Julio",
+    name: "Avenida 5 de Julio",
     category: "infrastructure",
     categoryIcon: "Construction",
     municipality: "Casco Central",
