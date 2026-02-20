@@ -331,4 +331,33 @@ export const projects = [
     testimonialAuthor: "Carmen Elena Velásquez",
     testimonialRole: "Conductora y Habitante"
   },
+  {
+    id: 12,
+    name: "Rehabilitación Vial de la Avenida 5 de Julio",
+    category: "infrastructure",
+    categoryIcon: "Construction",
+    municipality: "Casco Central",
+    description: "Colocación de 31 toneladas de asfalto en el corazón de la ciudad.",
+    fullDescription: "Como parte del plan estratégico de recuperación del Casco Central, la Corporación de Vialidad e Infraestructura del Municipio Sotillo (COVIMUS), bajo los lineamientos del Alcalde Jesús Marcano Tábata, ejecutó una jornada de asfaltado en la importante Avenida 5 de Julio.\n\nLos trabajos consistieron en la colocación eficiente de 31 toneladas de mezcla asfáltica en caliente, permitiendo recuperar aproximadamente 45 metros lineales de vialidad. Esta obra optimiza significativamente el flujo vehicular en una de las arterias más transitadas de Puerto La Cruz, dinamizando la economía local y beneficiando directamente a la Comuna Bahía de Pozuelo, comerciantes y transportistas.",
+    images: [
+      "/assets/images/ima_projects/2026/Av.5_julio/av-5-julio-01.jpg",
+      "/assets/images/ima_projects/2026/Av.5_julio/av-5-julio-02.jpg",
+      "/assets/images/ima_projects/2026/Av.5_julio/av-5-julio-03.jpg",
+      "/assets/images/ima_projects/2026/Av.5_julio/av-5-julio-04.jpg",
+      "/assets/images/ima_projects/2026/Av.5_julio/av-5-julio-05.jpg",
+      "/assets/images/ima_projects/2026/Av.5_julio/av-5-julio-06.jpg"
+    ],
+    image: "/assets/images/ima_projects/2026/Av.5_julio/av-5-julio-01.jpg",
+    imageAlt: "Asfaltado en Av. 5 de Julio, Casco Central",
+    status: "completed",
+    progress: 100,
+    startDate: "16/02/2026",
+    endDate: "19/02/2026",
+    budget: "31 Ton Asfalto",
+    beneficiaries: "45 Metros",
+    contractor: "Covimus",
+    coordinates: { lat: 10.218213, lng: -64.637995 },
+    impact: "Recuperación del Casco Central para dinamizar economía local.",
+    testimonial: null
+  }
 ];

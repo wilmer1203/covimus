@@ -52,7 +52,7 @@ export const highCommand = {
 export const leadershipTeam = [
     {
         id: "Vicepresidencia",
-        name: "Vacante / Por Designar",
+        name: "Ing. Darling Salazar",
         position: "Vicepresidente",
         credentials: "Alto Nivel Gerencial",
         bio: "Responsable de apoyar a la presidencia en la coordinación general de las actividades de la corporación y suplir faltas temporales.",
@@ -66,9 +66,9 @@ export const leadershipTeam = [
     },
     {
         id: "Administración",
-        name: "Lic. Ramona Sánchez",
-        position: "Gerente Administración",
-        credentials: "Licenciada en Contaduría Pública",
+        name: "Msc. Ramona Sánchez",
+        position: "Gerente de Administración",
+        credentials: "Magister / Licenciada en Contaduría Pública",
         bio: "Garante de la salud financiera de la institución. Su gestión transparente asegura la ejecución eficiente de los recursos asignados al desarrollo municipal.",
         image: "/assets/images/placeholder_authority.png",
         highlights: ["Auditoría", "Recursos Públicos"],
@@ -80,7 +80,7 @@ export const leadershipTeam = [
     },
     {
         id: "Talento Humano",
-        name: "Lic. María Rodríguez",
+        name: "T.S.U María Rodríguez",
         position: "Gerente de RRHH",
         credentials: "Gestión de Talento Humano",
         bio: "Encargada de la gestión del capital humano, bienestar laboral y capacitación continua del personal de COVIMUS.",
@@ -108,9 +108,9 @@ export const leadershipTeam = [
     },
     {
         id: "Operaciones",
-        name: "Ing. Carlos Pérez",
+        name: "Vacante",
         position: "Gerente de Operaciones",
-        credentials: "Ingeniero Civil",
+        credentials: "Ingeniero",
         bio: "Coordina la maquinaria y equipos en terreno, asegurando el avance físico de las obras bajo los estándares de calidad.",
         image: "/assets/images/Impacto Real_2.jpg",
         highlights: ["Logística", "Maquinaria"],
@@ -122,9 +122,9 @@ export const leadershipTeam = [
     },
     {
         id: "Proyectos",
-        name: "Arq. Ana González",
+        name: "Ing. Oswaldo Malave",
         position: "Gerente de Proyectos",
-        credentials: "Arquitecto / Urbanista",
+        credentials: "Ingeniero",
         bio: "Diseña y planifica las intervenciones urbanas, desde la conceptualización hasta la entrega de los planos ejecutivos.",
         image: "/assets/images/Impacto Real_3.jpg",
         highlights: ["Diseño Urbano", "Planificación"],
@@ -135,10 +135,24 @@ export const leadershipTeam = [
         ]
     },
     {
+        id: "Contrataciones",
+        name: "Abog. Ana Cedeño",
+        position: "Gerente de Contrataciones",
+        credentials: "Abogado",
+        bio: "Gestión y control de las contrataciones públicas de la corporación para garantizar la transparencia legal.",
+        image: null,
+        highlights: ["Contratos", "Licitaciones"],
+        functions: [
+            "Coordinar los procesos licitatorios.",
+            "Elaborar y revisar contratos de obras y servicios.",
+            "Vigilar el cumplimiento normativo en contrataciones."
+        ]
+    },
+    {
         id: "Compras",
-        name: "Lic. José López",
-        position: "Gerente de Compras",
-        credentials: "Licenciado en Administración",
+        name: "T.S.U Aurianny Oyer",
+        position: "Coordinador de Compras",
+        credentials: "Técnico Superior Universitario",
         bio: "Gestiona la adquisición de insumos y materiales estratégicos para garantizar la continuidad operativa de la planta.",
         image: null,
         highlights: ["Procura", "Inventario"],
@@ -148,20 +162,7 @@ export const leadershipTeam = [
             "Controlar el inventario de almacenes."
         ]
     },
-    {
-        id: "Seguridad",
-        name: "Sup. Miguel Torres",
-        position: "Jefe de Seguridad",
-        credentials: "Seguridad Industrial",
-        bio: "Responsable de los protocolos de seguridad industrial y patrimonial en todas las instalaciones de la corporación.",
-        image: null,
-        highlights: ["Seguridad Industrial", "Control de Acceso"],
-        functions: [
-            "Velar por la seguridad física de las instalaciones.",
-            "Implementar normas de higiene y seguridad industrial.",
-            "Controlar el acceso de personas y vehículos."
-        ]
-    }
+
 ];
 
 export const highLevelOrg = [
