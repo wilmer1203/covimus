@@ -3,24 +3,24 @@ export const highCommand = {
         name: "Dr. Jesús Marcano Tábata",
         position: "Alcalde del Municipio Sotillo",
         roleTag: "Autoridad Suprema",
-        bio: "Líder visionario y estratega con amplia trayectoria en la administración pública y defensa integral. Su gestión se caracteriza por la disciplina operativa y el compromiso social directo.",
+        bio: "Líder con sólida formación técnica y académica. Combina su experticia en ingeniería con una vasta trayectoria en la gestión pública ministerial y municipal, enfocada en la transformación de la infraestructura y servicios públicos.",
         image: "/assets/images/jesus.jpg",
-        highlights: ["99% Accionista Mayoritario", "Plan Rector de Desarrollo", "Gestión Social Eficiente"],
+        highlights: ["Ingeniero Químico & Doctor en Educación", "Ex-Director Regional Ministerial", "Liderazgo en Gestión de Infraestructura"],
         contextImage: "/assets/images/av_paseo.png",
         education: [
-            "Doctorante en Seguridad y Defensa Integral de la Nación",
-            "M.Sc. en Gerencia Logística",
-            "Licenciado en Ciencias y Artes Militares (AMV)"
+            "Doctor en Educación (UDO, 2021)",
+            "Magíster en Educación Superior (UDO, 2010)",
+            "Ingeniero Químico (UDO, 2002)"
         ],
         experience: [
-            "Mayor General del Ejército Bolivariano",
-            "Director Ministerial de Hábitat y Vivienda (Anzoátegui)",
-            "Presidente de la EPS Gas Comunal (Anzoátegui)"
+            "Alcalde del Municipio Juan Antonio Sotillo",
+            "Director Regional Ministerial (MINFRA, MOPVI, MTC)",
+            "Presidente de Institutos de Vivienda y Transporte"
         ],
         certifications: [
-            "Gerencia Pública de Alto Nivel",
-            "Planificación Estratégica Situacional",
-            "Comando y Estado Mayor"
+            "Especialista en Movilidad y Transporte Urbano",
+            "Experto en Gestión de Servicios Públicos",
+            "Docente Universitario Asistente (UDO)"
         ]
     },
     presidente: {
@@ -28,7 +28,7 @@ export const highCommand = {
         position: "Presidente COVIMUS S.A.",
         roleTag: "Dirección Ejecutiva",
         bio: "Ingeniero civil experto en gerencia de proyectos de infraestructura de gran envergadura. Su enfoque técnico garantiza la calidad y durabilidad de cada obra municipal.",
-        image: "https://img.rocket.new/generatedImages/rocket_gen_img_15a1404b5-1763299032692.png",
+        image: "assets/images/presidente.webp",
         highlights: ["Dirección General Operativa", "Control de Calidad", "Optimización de Recursos"],
         contextImage: "/assets/images/asphalt-plant.png",
         education: [

@@ -16,6 +16,8 @@ import HistorySection from './components/HistorySection';
 import HumanCapital from './components/HumanCapital';
 import ValuesSection from './components/ValuesSection';
 import ContactCTA from './components/ContactCTA';
+// import LogoCollageSection from './components/LogoCollageSection';
+// import ParticleLogo from './components/ParticleLogo';
 import SEO from '../../components/SEO';
 
 const AboutUs = () => {
@@ -78,6 +80,8 @@ const AboutUs = () => {
           <HistorySection />
           <HumanCapital />
           <ValuesSection />
+          {/* <LogoCollageSection /> */}
+          {/* <ParticleLogo /> */}
           <ContactCTA />
         </main>
 
