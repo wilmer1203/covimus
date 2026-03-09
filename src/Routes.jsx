@@ -7,7 +7,9 @@ import Projects from './pages/projects';
 import AboutUs from './pages/about-us';
 import Contact from './pages/contact';
 import Homepage from './pages/homepage';
-import Authorities from './pages/authorities';
+import authorities from './pages/authorities';
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 const Routes = () => {
   return (
@@ -23,6 +25,8 @@ const Routes = () => {
           {/* <Route path="/autoridades" element={<Authorities />} /> */}
           <Route path="*" element={<NotFound />} />
         </RouterRoutes>
+        <Analytics />
+        <SpeedInsights />
       </ErrorBoundary>
     </BrowserRouter>
   );
