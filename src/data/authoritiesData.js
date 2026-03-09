@@ -24,27 +24,27 @@ export const highCommand = {
         ]
     },
     presidente: {
-        name: "Ing. Oswaldo González",
+        name: "Ing. Oswaldo Rafael González González",
         position: "Presidente COVIMUS S.A.",
         roleTag: "Dirección Ejecutiva",
-        bio: "Ingeniero civil experto en gerencia de proyectos de infraestructura de gran envergadura. Su enfoque técnico garantiza la calidad y durabilidad de cada obra municipal.",
-        image: "assets/images/presidente.webp",
-        highlights: ["Dirección General Operativa", "Control de Calidad", "Optimización de Recursos"],
+        bio: "Ingeniero Civil con una sólida trayectoria en la administración pública nacional y regional. Su vasta experiencia liderando direcciones ministeriales y gerencias estatales de infraestructura garantiza una gestión orientada a la eficiencia operativa y la transformación urbana del municipio.",
+        image: "/assets/images/presidente.webp",
+        highlights: ["Sólida Trayectoria Ministerial", "Gerencia en Construpatria S.A.", "Experto en Inspección y Obras Civiles"],
         contextImage: "/assets/images/asphalt-plant.png",
         education: [
-            "Ingeniero Civil (UDO)",
-            "Especialista en Gerencia de Construcción",
-            "Diplomado en Pavimentos Asfálticos"
+            "Ingeniero Civil (UNEFA-Tucupita)",
+            "Bachiller en Ciencias"
         ],
         experience: [
-            "Director de Ingeniería Municipal",
-            "Gerente de Proyectos de Vialidad Urbana",
-            "Inspector de Obras Civiles de Alta Complejidad"
+            "Presidente de COVIMUS S.A. (Desde 2025)",
+            "Director Estatal (Ministerio de Hábitat y Vivienda)",
+            "Gerente Estatal (Construpatria S.A. Edo. Delta Amacuro)",
+            "Jefe de División / Ingeniero Inspector (Infraestructura Delta Amacuro)"
         ],
         certifications: [
-            "Gestión de Plantas de Asfalto",
-            "Normas COVENIN e ISO 9001",
-            "Seguridad Industrial en Obras"
+            "Gerencia Pública Integral",
+            "Supervisión y Control de Obras",
+            "Planificación Estratégica Institucional"
         ]
     }
 };
@@ -186,11 +186,11 @@ export const highLevelOrg = [
 
 export const presidentNode = {
     id: "presidencia",
-    name: "Ing. Oswaldo González",
+    name: "Ing. Oswaldo Rafael González González",
     position: "Presidencia",
-    credentials: "Ingeniero Civil",
-    bio: "Líder de la ejecución de obras en campo.",
-    image: "https://img.rocket.new/generatedImages/rocket_gen_img_15a1404b5-1763299032692.png",
-    highlights: ["Dirección General"],
+    credentials: "Ingeniero Civil (UNEFA)",
+    bio: "Líder con amplia experiencia en la dirección de infraestructura pública a nivel ministerial.",
+    image: "/assets/images/presidente.webp",
+    highlights: ["Sólida Trayectoria en Gestión Pública"],
     functions: ["Ejercer la representación legal de la empresa.", "Dirigir la administración y operaciones.", "Ejecutar las decisiones de la Asamblea y Junta Directiva."]
 };
