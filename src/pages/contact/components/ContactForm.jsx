@@ -8,9 +8,9 @@ const ContactForm = () => {
 
   // CONFIGURACIÓN DE EMAILJS (¡REEMPLAZA ESTOS VALORES CON LOS TUYOS!)
   // Crea tu cuenta gratis en https://www.emailjs.com/
-  const SERVICE_ID = "service_e4k16sk";
-  const TEMPLATE_ID = "template_z5yzeda";
-  const PUBLIC_KEY = "8pIfN356iGAOtP3Qx";
+  const SERVICE_ID = "service_cqwk6zb";
+  const TEMPLATE_ID = "template_jaew4a8";
+  const PUBLIC_KEY = "rMmq5Oiu66royCEOq";
   const IMGBB_API_KEY = "7b8e6d3de8d316ba8b8b5dc97d46411c";
 
   const [isAnonymous, setIsAnonymous] = useState(true); // Default to Anonymous
