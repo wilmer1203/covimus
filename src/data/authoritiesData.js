@@ -121,9 +121,37 @@ export const leadershipTeam = [
         ]
     },
     {
-        id: "Proyectos",
+        id: "AdministracionContratos",
+        name: "Vacante",
+        position: "Administración de Contratos",
+        credentials: "Especialista en Contratos",
+        bio: "Responsable de la administración y seguimiento de los contratos suscritos por la corporación.",
+        image: null,
+        highlights: ["Contratos", "Gestión Documental"],
+        functions: [
+            "Administrar y dar seguimiento a los contratos vigentes.",
+            "Verificar el cumplimiento de las obligaciones contractuales.",
+            "Mantener el archivo actualizado de contratos."
+        ]
+    },
+    {
+        id: "Produccion",
+        name: "Ing. Jhonathan Lopez",
+        position: "Jefe de Producción",
+        credentials: "Ingeniero",
+        bio: "Responsable de dirigir y controlar los procesos de producción de la corporación para garantizar el cumplimiento de los planes de obra.",
+        image: null,
+        highlights: ["Producción", "Control de Obras"],
+        functions: [
+            "Dirigir las operaciones de producción en campo.",
+            "Controlar los rendimientos y avances de producción.",
+            "Coordinar el uso eficiente de recursos y maquinaria."
+        ]
+    },
+    {
+        id: "Planificacion",
         name: "Ing. Oswaldo Malave",
-        position: "Gerente de Proyectos",
+        position: "Coordinación de Planificación",
         credentials: "Ingeniero",
         bio: "Diseña y planifica las intervenciones urbanas, desde la conceptualización hasta la entrega de los planos ejecutivos.",
         image: "/assets/images/Impacto Real_3.jpg",
@@ -135,9 +163,23 @@ export const leadershipTeam = [
         ]
     },
     {
+        id: "CalidadSeguimiento",
+        name: "Ing. Ricardo Sanchez",
+        position: "Coordinador de Control de Calidad y Seguimiento",
+        credentials: "Ingeniero",
+        bio: "Garantiza que las obras ejecutadas cumplan con los estándares de calidad técnicos y normativos establecidos.",
+        image: null,
+        highlights: ["Control de Calidad", "Seguimiento de Obras"],
+        functions: [
+            "Verificar el cumplimiento de especificaciones técnicas.",
+            "Realizar seguimiento al avance y calidad de obras.",
+            "Emitir informes de control de calidad."
+        ]
+    },
+    {
         id: "Contrataciones",
         name: "Abog. Ana Cedeño",
-        position: "Gerente de Contrataciones",
+        position: "Jefe de Contrataciones",
         credentials: "Abogado",
         bio: "Gestión y control de las contrataciones públicas de la corporación para garantizar la transparencia legal.",
         image: null,
@@ -160,6 +202,90 @@ export const leadershipTeam = [
             "Gestionar la adquisición de bienes y servicios.",
             "Mantener el registro de proveedores actualizado.",
             "Controlar el inventario de almacenes."
+        ]
+    },
+    {
+        id: "Presupuesto",
+        name: "Vacante",
+        position: "Jefe de Presupuesto",
+        credentials: "Licenciado en Administración / Contaduría",
+        bio: "Responsable de la formulación, ejecución y control presupuestario de la corporación.",
+        image: null,
+        highlights: ["Presupuesto", "Planificación Financiera"],
+        functions: [
+            "Elaborar y controlar el presupuesto anual.",
+            "Hacer seguimiento a la ejecución presupuestaria.",
+            "Emitir reportes de desviaciones presupuestarias."
+        ]
+    },
+    {
+        id: "Bienes",
+        name: "Leonardo Guadarrama",
+        position: "Jefe de Bienes",
+        credentials: "Administración de Bienes",
+        bio: "Responsable del registro, custodia y control de los bienes muebles e inmuebles de la corporación.",
+        image: null,
+        highlights: ["Bienes Públicos", "Inventario"],
+        functions: [
+            "Registrar y custodiar los bienes de la empresa.",
+            "Realizar levantamientos de inventario periódicos.",
+            "Gestionar la asignación y desincorporación de bienes."
+        ]
+    },
+    {
+        id: "Contabilidad",
+        name: "Lic. Franmilk Palmar",
+        position: "Jefe de Contabilidad",
+        credentials: "Licenciado en Contaduría Pública",
+        bio: "Responsable de los registros contables y estados financieros de la corporación.",
+        image: null,
+        highlights: ["Contabilidad", "Estados Financieros"],
+        functions: [
+            "Llevar los registros contables de la empresa.",
+            "Elaborar los estados financieros periódicos.",
+            "Supervisar los procesos tributarios y fiscales."
+        ]
+    },
+    {
+        id: "Nomina",
+        name: "Vacante",
+        position: "Jefe de Nómina",
+        credentials: "Administración de RRHH",
+        bio: "Responsable del procesamiento y control de la nómina del personal de la corporación.",
+        image: null,
+        highlights: ["Nómina", "Recursos Humanos"],
+        functions: [
+            "Procesar la nómina mensual del personal.",
+            "Controlar las deducciones y beneficios laborales.",
+            "Mantener los registros de pago actualizados."
+        ]
+    },
+    {
+        id: "BienestarSocial",
+        name: "T.S.U Elis Aguilera",
+        position: "Jefe de Bienestar Social",
+        credentials: "Técnico Superior Universitario",
+        bio: "Encargada de gestionar los programas de bienestar social y beneficios del personal de la corporación.",
+        image: null,
+        highlights: ["Bienestar Social", "Beneficios Laborales"],
+        functions: [
+            "Gestionar los programas de beneficios sociales.",
+            "Atender las necesidades de bienestar del personal.",
+            "Coordinar actividades de integración y salud laboral."
+        ]
+    },
+    {
+        id: "RedesSociales",
+        name: "Navy Araujo",
+        position: "Coordinador de Redes Sociales e Informática",
+        credentials: "Informática / Comunicaciones",
+        bio: "Responsable de la gestión de la presencia digital y los sistemas informáticos de la corporación.",
+        image: null,
+        highlights: ["Redes Sociales", "Informática"],
+        functions: [
+            "Gestionar las redes sociales institucionales.",
+            "Dar soporte técnico a los sistemas informáticos.",
+            "Mantener actualizada la imagen digital de la corporación."
         ]
     },
 
