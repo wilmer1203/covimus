@@ -1,14 +1,5 @@
 {
   "routes": [
-    {
-      "src": "/sitemap_covimus.xml",
-      "dest": "/sitemap_covimus.xml",
-      "headers": { "Content-Type": "application/xml; charset=utf-8" }
-    },
-    {
-      "src": "/robots.txt",
-      "dest": "/robots.txt"
-    },
     { "handle": "filesystem" },
     { "src": "/(.*)", "dest": "/index.html" }
   ]
