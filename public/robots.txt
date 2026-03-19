@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://covimus.vercel.app/sitemap_covimus.xml
+Sitemap: https://covimus.vercel.app/sitemap.xml
