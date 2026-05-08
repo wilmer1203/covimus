@@ -80,7 +80,7 @@ export const leadershipTeam = [
     },
     {
         id: "Talento Humano",
-        name: "T.S.U María Rodríguez",
+        name: "Vacante",
         position: "Gerente de RRHH",
         credentials: "Gestión de Talento Humano",
         bio: "Encargada de la gestión del capital humano, bienestar laboral y capacitación continua del personal de COVIMUS.",
@@ -94,7 +94,7 @@ export const leadershipTeam = [
     },
     {
         id: "Consultoría",
-        name: "Abg. Eduardo Chivico",
+        name: "Vacante",
         position: "Consultor Jurídico",
         credentials: "Abogado / Especialista Administrativo",
         bio: "Vela por la legalidad y el cumplimiento normativo en cada acto administrativo, brindando seguridad jurídica a las operaciones.",
@@ -122,7 +122,7 @@ export const leadershipTeam = [
     },
     {
         id: "AdministracionContratos",
-        name: "Vacante",
+        name: "Ing. Alberto Rojas",
         position: "Administración de Contratos",
         credentials: "Especialista en Contratos",
         bio: "Responsable de la administración y seguimiento de los contratos suscritos por la corporación.",
@@ -178,7 +178,7 @@ export const leadershipTeam = [
     },
     {
         id: "Contrataciones",
-        name: "Abog. Ana Cedeño",
+        name: "Vacante",
         position: "Jefe de Contrataciones",
         credentials: "Abogado",
         bio: "Gestión y control de las contrataciones públicas de la corporación para garantizar la transparencia legal.",
@@ -206,7 +206,7 @@ export const leadershipTeam = [
     },
     {
         id: "Presupuesto",
-        name: "Vacante",
+        name: "Lcda. Madelein Cedeño",
         position: "Jefe de Presupuesto",
         credentials: "Licenciado en Administración / Contaduría",
         bio: "Responsable de la formulación, ejecución y control presupuestario de la corporación.",
@@ -234,7 +234,7 @@ export const leadershipTeam = [
     },
     {
         id: "Contabilidad",
-        name: "Lic. Franmilk Palmar",
+        name: "Vacante",
         position: "Jefe de Contabilidad",
         credentials: "Licenciado en Contaduría Pública",
         bio: "Responsable de los registros contables y estados financieros de la corporación.",

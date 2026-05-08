@@ -10,6 +10,7 @@ import FeaturedProjects from './components/FeaturedProjects';
 import SocialProof from './components/SocialProof';
 import InstitutionalAlliances from './components/InstitutionalAlliances';
 import QuickActions from './components/QuickActions';
+import AnniversaryModal from './components/AnniversaryModal';
 import SEO from '../../components/SEO';
 
 const Homepage = () => {
@@ -37,6 +38,7 @@ const Homepage = () => {
         <Header />
 
         <main className="pt-16 lg:pt-20">
+          <AnniversaryModal />
           <HeroSection />
           <InstitutionalAlliances />
           <AsphaltPlantSection />

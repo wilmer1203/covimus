@@ -30,7 +30,7 @@ const QuickActions = () => {
       title: "Nuestra Historia",
       description: "Más de 20 años transformando Anzoátegui desde el Decreto N° 93 de 2004",
       icon: "BookOpen",
-      link: "/autoridades", // Changed to valid route likely containing history
+      link: "/projects",
       gradient: "from-slate-800 to-slate-900",
       accent: "text-[#FFCC00]",
       features: ["Decreto N° 93", "Logros 2004-2026", "Equipo Directivo"]
