@@ -4,10 +4,33 @@ import { Link } from 'react-router-dom';
 import Icon from '../../../components/AppIcon';
 
 const DURATION_MS = 12000;
+const STORAGE_KEY = 'covimus_anniversary_17_seen';
+
+// localStorage puede fallar en modo privado; en ese caso el modal se muestra en cada visita
+const wasSeen = () => {
+  try {
+    return localStorage.getItem(STORAGE_KEY) === 'true';
+  } catch {
+    return false;
+  }
+};
+
+const markSeen = () => {
+  try {
+    localStorage.setItem(STORAGE_KEY, 'true');
+  } catch {
+    // sin persistencia disponible
+  }
+};
 
 const AnniversaryModal = () => {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(() => !wasSeen());
   const [progress, setProgress] = useState(100);
+
+  const close = () => {
+    markSeen();
+    setIsVisible(false);
+  };
 
   useEffect(() => {
     if (!isVisible) return;
@@ -19,14 +42,13 @@ const AnniversaryModal = () => {
       setProgress(remaining);
       if (remaining === 0) {
         clearInterval(interval);
+        markSeen();
         setIsVisible(false);
       }
     }, 50);
 
     return () => clearInterval(interval);
   }, [isVisible]);
-
-  const close = () => setIsVisible(false);
 
   return (
     <AnimatePresence>
