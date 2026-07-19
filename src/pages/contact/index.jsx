@@ -1,9 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Helmet } from 'react-helmet';
 import Header from '../../components/ui/Header';
 import Footer from '../../components/ui/Footer';
-import Icon from '../../components/AppIcon';
 
 // Components
 import ContactHero from './components/ContactHero';
@@ -16,8 +14,6 @@ const ContactPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const [activeTab, setActiveTab] = React.useState('reporte');
 
   return (
     <AnimatePresence mode="wait">

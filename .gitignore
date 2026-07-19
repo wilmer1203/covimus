@@ -3,6 +3,13 @@ node_modules
 .idea
 package-lock.json
 /dist
+/build
 .vscode/
 .idea/
 vite.config.*s.*
+
+# Configuración local de Claude Code
+.claude/
+
+# Documentos con datos personales (CVs, etc.)
+*.docx
