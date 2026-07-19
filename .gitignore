@@ -13,3 +13,5 @@ vite.config.*s.*
 
 # Documentos con datos personales (CVs, etc.)
 *.docx
+.vercel
+.env*

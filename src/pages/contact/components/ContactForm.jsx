@@ -2,14 +2,7 @@ import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Icon from '../../../components/AppIcon';
 
-import emailjs from '@emailjs/browser';
-
 const ContactForm = () => {
-
-  // Configuración de EmailJS (la public key está diseñada para usarse en el cliente)
-  const SERVICE_ID = "service_cqwk6zb";
-  const TEMPLATE_ID = "template_jaew4a8";
-  const PUBLIC_KEY = "rMmq5Oiu66royCEOq";
 
   const [isAnonymous, setIsAnonymous] = useState(true); // Default to Anonymous
 
@@ -35,7 +28,7 @@ const ContactForm = () => {
   const handleImageChange = (e) => {
     const file = e.target.files?.[0];
     if (file) {
-      // Validación de peso (Máximo 2MB para evitar errores de EmailJS)
+      // Validación de peso (Máximo 2MB: el body de la función serverless admite ~4.5MB y el base64 pesa un 33% más)
       if (file.size > 2 * 1024 * 1024) {
         alert("⚠️ La imagen es muy pesada. El límite es 2MB. Por favor intenta con una foto más ligera o comprimida.");
         e.target.value = ""; // Limpiar input
@@ -90,27 +83,28 @@ const ContactForm = () => {
         }
       }
 
-      // 2. Preparar parámetros para EmailJS (JSON)
-      // Agregamos el link de la imagen al final del mensaje para que salga en el correo
-      const fullMessage = imageUrl
-        ? `${formData.description}\n\n📷 Evidencia Adjunta: ${imageUrl}`
-        : formData.description;
+      // 2. Enviar el reporte por correo (vía /api/send, que guarda la clave de Resend en el servidor)
+      const sendResponse = await fetch('/api/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          anonymous: isAnonymous,
+          name: formData.name,
+          cedula: formData.cedula,
+          phone: formData.phone,
+          email: formData.email,
+          requestType: formData.requestType,
+          sector: formData.sector,
+          reference: formData.referencePoint,
+          message: formData.description,
+          imageUrl,
+        }),
+      });
 
-      const templateParams = {
-        to_name: "Administrador COVIMUS",
-        user_name: isAnonymous ? "Anónimo" : formData.name,
-        user_email: isAnonymous ? "anonimo@covimus.com" : formData.email,
-        user_phone: isAnonymous ? "0000-0000000" : formData.phone,
-        user_cedula: isAnonymous ? "00000000" : formData.cedula,
-        request_type: formData.requestType,
-        sector: formData.sector,
-        reference: formData.referencePoint,
-        message: fullMessage, // El mensaje ahora incluye el link
-      };
-
-      // 3. Enviar correo usando emailjs.send (NO sendForm)
-      // Esto evita el problema de los adjuntos binarios
-      await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
+      const sendData = await sendResponse.json();
+      if (!sendResponse.ok) {
+        throw new Error('Error al enviar el correo: ' + (sendData.error || 'Desconocido'));
+      }
 
       alert('¡Reporte enviado con éxito!');
 
