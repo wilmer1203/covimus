@@ -6,12 +6,10 @@ import emailjs from '@emailjs/browser';
 
 const ContactForm = () => {
 
-  // CONFIGURACIÓN DE EMAILJS (¡REEMPLAZA ESTOS VALORES CON LOS TUYOS!)
-  // Crea tu cuenta gratis en https://www.emailjs.com/
+  // Configuración de EmailJS (la public key está diseñada para usarse en el cliente)
   const SERVICE_ID = "service_cqwk6zb";
   const TEMPLATE_ID = "template_jaew4a8";
   const PUBLIC_KEY = "rMmq5Oiu66royCEOq";
-  const IMGBB_API_KEY = "7b8e6d3de8d316ba8b8b5dc97d46411c";
 
   const [isAnonymous, setIsAnonymous] = useState(true); // Default to Anonymous
 
@@ -58,6 +56,14 @@ const ContactForm = () => {
     setFormData(prev => ({ ...prev, image: null }));
   };
 
+  const fileToBase64 = (file) =>
+    new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(String(reader.result).split(',')[1]);
+      reader.onerror = () => reject(new Error('No se pudo leer la imagen'));
+      reader.readAsDataURL(file);
+    });
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -67,22 +73,20 @@ const ContactForm = () => {
       const fileInput = e.target.querySelector('input[name="evidence_file"]');
       const file = fileInput?.files?.[0];
 
-      // 1. Subir imagen a ImgBB si existe
+      // 1. Subir imagen si existe (vía /api/upload, que guarda la clave de ImgBB en el servidor)
       if (file) {
-        const formData = new FormData();
-        formData.append('image', file);
-
-        // Mostrar estado de carga intermedio si se desea, o esperar
-        const response = await fetch(`https://api.imgbb.com/1/upload?key=${IMGBB_API_KEY}`, {
+        const base64 = await fileToBase64(file);
+        const response = await fetch('/api/upload', {
           method: 'POST',
-          body: formData,
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ image: base64 }),
         });
 
         const data = await response.json();
-        if (data.success) {
-          imageUrl = data.data.url; // URL pública de la imagen
+        if (response.ok && data.url) {
+          imageUrl = data.url; // URL pública de la imagen
         } else {
-          throw new Error('Error al subir imagen a ImgBB: ' + (data.error?.message || 'Desconocido'));
+          throw new Error('Error al subir imagen: ' + (data.error || 'Desconocido'));
         }
       }
 
