@@ -7,7 +7,6 @@ import Projects from './pages/projects';
 import AboutUs from './pages/about-us';
 import Contact from './pages/contact';
 import Homepage from './pages/homepage';
-import authorities from './pages/authorities';
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 
@@ -22,7 +21,6 @@ const Routes = () => {
           <Route path="/projects" element={<Projects />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/contact" element={<Contact />} />
-          {/* <Route path="/autoridades" element={<Authorities />} /> */}
           <Route path="*" element={<NotFound />} />
         </RouterRoutes>
         <Analytics />

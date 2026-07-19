@@ -6,7 +6,7 @@ export const highCommand = {
         bio: "Líder con sólida formación técnica y académica. Combina su experticia en ingeniería con una vasta trayectoria en la gestión pública ministerial y municipal, enfocada en la transformación de la infraestructura y servicios públicos.",
         image: "/assets/images/jesus.jpg",
         highlights: ["Ingeniero Químico & Doctor en Educación", "Ex-Director Regional Ministerial", "Liderazgo en Gestión de Infraestructura"],
-        contextImage: "/assets/images/av_paseo.png",
+        contextImage: "/assets/images/av_paseo.webp",
         education: [
             "Doctor en Educación (UDO, 2021)",
             "Magíster en Educación Superior (UDO, 2010)",
@@ -70,7 +70,7 @@ export const leadershipTeam = [
         position: "Gerente de Administración",
         credentials: "Magister / Licenciada en Contaduría Pública",
         bio: "Garante de la salud financiera de la institución. Su gestión transparente asegura la ejecución eficiente de los recursos asignados al desarrollo municipal.",
-        image: "/assets/images/placeholder_authority.png",
+        image: null,
         highlights: ["Auditoría", "Recursos Públicos"],
         functions: [
             "Administrar los recursos financieros de la empresa.",
@@ -290,33 +290,3 @@ export const leadershipTeam = [
     },
 
 ];
-
-export const highLevelOrg = [
-    {
-        id: "asamblea",
-        name: "Asamblea General Accionistas",
-        position: "Asamblea General de Accionistas",
-        image: null,
-        credentials: "Máxima Autoridad",
-        functions: ["Aprobar estados financieros.", "Designar la Junta Directiva.", "Modificar estatutos sociales."]
-    },
-    {
-        id: "junta",
-        name: "Junta Directiva",
-        position: "Junta Directiva",
-        image: null,
-        credentials: "Cuerpo Colegiado",
-        functions: ["Definir las políticas estratégicas.", "Supervisar la gestión de la Presidencia.", "Aprobar contratos de gran envergadura."]
-    }
-];
-
-export const presidentNode = {
-    id: "presidencia",
-    name: "Ing. Oswaldo Rafael González González",
-    position: "Presidencia",
-    credentials: "Ingeniero Civil (UNEFA)",
-    bio: "Líder con amplia experiencia en la dirección de infraestructura pública a nivel ministerial.",
-    image: "/assets/images/presidente.webp",
-    highlights: ["Sólida Trayectoria en Gestión Pública"],
-    functions: ["Ejercer la representación legal de la empresa.", "Dirigir la administración y operaciones.", "Ejecutar las decisiones de la Asamblea y Junta Directiva."]
-};

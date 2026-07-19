@@ -3,9 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet';
 import Header from '../../components/ui/Header';
 import Footer from '../../components/ui/Footer';
-import GovernancePillars from '../authorities/components/GovernancePillars';
-import HighCommandSection from '../authorities/components/HighCommandSection';
-import ManagementCarousel from '../authorities/components/ManagementCarousel';
+import GovernancePillars from './components/GovernancePillars';
+import HighCommandSection from './components/HighCommandSection';
+import ManagementCarousel from './components/ManagementCarousel';
 import { leadershipTeam } from '../../data/authoritiesData';
 
 // New Components
@@ -16,8 +16,6 @@ import HistorySection from './components/HistorySection';
 import HumanCapital from './components/HumanCapital';
 import ValuesSection from './components/ValuesSection';
 import ContactCTA from './components/ContactCTA';
-// import LogoCollageSection from './components/LogoCollageSection';
-// import ParticleLogo from './components/ParticleLogo';
 import SEO from '../../components/SEO';
 
 const AboutUs = () => {
@@ -80,8 +78,6 @@ const AboutUs = () => {
           <HistorySection />
           <HumanCapital />
           <ValuesSection />
-          {/* <LogoCollageSection /> */}
-          {/* <ParticleLogo /> */}
           <ContactCTA />
         </main>
 

@@ -21,7 +21,6 @@ const Header = () => {
   const navigationItems = [
     { path: '/', label: 'Inicio', icon: 'Home' },
     { path: '/about-us', label: 'Nosotros', icon: 'Users' },
-    // { path: '/autoridades', label: 'Autoridades', icon: 'Shield' },
     { path: '/projects', label: 'Proyectos', icon: 'Briefcase' },
   ];
 
