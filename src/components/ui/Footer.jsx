@@ -9,9 +9,8 @@ const Footer = () => {
     {
       title: 'Menú Principal',
       links: [
-        { label: 'Inicio', path: '/homepage' },
+        { label: 'Inicio', path: '/' },
         { label: 'Nosotros', path: '/about-us' },
-        // { label: 'Autoridades', path: '/authorities' },
         { label: 'Proyectos', path: '/projects' },
       ],
     },
