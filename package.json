@@ -44,7 +44,7 @@
   },
   "scripts": {
     "start": "vite",
-    "postinstall": "playwright install --with-deps chromium",
+    "postinstall": "playwright install chromium",
     "build": "vite build --sourcemap && node scripts/prerender.mjs",
     "serve": "vite preview"
   },
@@ -67,6 +67,7 @@
     ]
   },
   "devDependencies": {
+    "@sparticuz/chromium": "^149.0.0",
     "@tailwindcss/typography": "^0.5.16",
     "@vitejs/plugin-react": "4.3.4",
     "autoprefixer": "10.4.2",

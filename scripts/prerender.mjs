@@ -20,6 +20,24 @@ import { chromium } from 'playwright';
 import { mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
+// Vercel's build image doesn't have the shared libraries (libnspr4,
+// libnss3, ...) Playwright's own downloaded Chromium needs, and has no
+// apt-get to install them with (it isn't a standard Debian/Ubuntu image).
+// @sparticuz/chromium ships a statically-linked Chromium built for exactly
+// this kind of constrained serverless/build environment. Only load it when
+// actually running on Vercel — locally (Windows/macOS/regular Linux) the
+// normal Playwright-managed browser installed via `playwright install`
+// works fine and @sparticuz/chromium's binary is Linux-only anyway.
+async function getLaunchOptions() {
+  if (!process.env.VERCEL) return {};
+  const { default: sparticuzChromium } = await import('@sparticuz/chromium');
+  return {
+    executablePath: await sparticuzChromium.executablePath(),
+    args: sparticuzChromium.args,
+    headless: true,
+  };
+}
+
 const ROUTES = ['/', '/about-us', '/projects', '/contact'];
 const DIST_DIR = path.resolve('dist');
 
@@ -49,7 +67,7 @@ async function main() {
   });
   const url = server.resolvedUrls.local[0].replace(/\/$/, '');
 
-  const browser = await chromium.launch();
+  const browser = await chromium.launch(await getLaunchOptions());
   const context = await browser.newContext({ reducedMotion: 'reduce' });
   const page = await context.newPage();
 
