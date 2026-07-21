@@ -17,6 +17,7 @@ import HumanCapital from './components/HumanCapital';
 import ValuesSection from './components/ValuesSection';
 import ContactCTA from './components/ContactCTA';
 import SEO from '../../components/SEO';
+import { breadcrumbList } from '../../utils/schema';
 
 const AboutUs = () => {
   useEffect(() => {
@@ -39,6 +40,10 @@ const AboutUs = () => {
           ogTitle="Nosotros - COVIMUS | Historia y Valores"
           ogDescription="Descubre el compromiso de COVIMUS con el desarrollo de la infraestructura y vialidad en el Municipio Sotillo."
           canonical="https://covimus.org/about-us"
+          jsonLd={breadcrumbList([
+            { name: 'Inicio', url: 'https://covimus.org/' },
+            { name: 'Nosotros', url: 'https://covimus.org/about-us' },
+          ])}
         />
 
         <Header />

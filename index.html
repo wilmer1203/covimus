@@ -13,8 +13,11 @@
   <meta name="google-site-verification" content="6OYsJ9fe9mYonbtIKxDoODl8-95i4It5Zf4hccXlmW4" />
 
   <!-- Open Graph / Facebook -->
+  <!-- og:url and canonical are route-specific: set dynamically per page by
+       SEO.jsx (react-helmet). Keeping a static one here would duplicate the
+       tag with a different value on every non-home route, and Google
+       disregards canonical hints entirely when it sees conflicting values. -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://covimus.org/" />
   <meta property="og:title" content="COVIMUS | Corporación de Vialidad e Infraestructura" />
   <meta property="og:description"
     content="Transformando Puerto La Cruz con obras de calidad. Gestión transparente y eficiente." />
@@ -22,7 +25,6 @@
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://covimus.org/" />
   <meta property="twitter:title" content="COVIMUS | Corporación de Vialidad e Infraestructura" />
   <meta property="twitter:description"
     content="Transformando Puerto La Cruz con obras de calidad. Gestión transparente y eficiente." />
@@ -30,7 +32,6 @@
 
   <link rel="icon" href="/assets/logo_covimus.jpg" />
   <link rel="manifest" href="/manifest.json" />
-  <link rel="canonical" href="https://covimus.org/" />
 
   <!-- JSON-LD: Datos estructurados para Google -->
   <script type="application/ld+json">

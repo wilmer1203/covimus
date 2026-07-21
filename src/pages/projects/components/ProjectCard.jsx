@@ -29,12 +29,13 @@ const ProjectCard = ({ project, onViewDetails }) => {
 
   return (
     <motion.div
+      id={`project-${project?.id}`}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
       // Card Container
-      className="group bg-slate-950 border border-white/10 rounded-[2rem] overflow-hidden hover:border-[#FFCC00]/50 hover:shadow-[0_0_40px_rgba(255,204,0,0.15)] transition-all duration-500 relative"
+      className="group bg-slate-950 border border-white/10 rounded-[2rem] overflow-hidden hover:border-[#FFCC00]/50 hover:shadow-[0_0_40px_rgba(255,204,0,0.15)] transition-all duration-500 relative scroll-mt-24"
     >
       {/* Image Section - Vertical 4:5 */}
       <div className="relative aspect-[4/5] overflow-hidden">

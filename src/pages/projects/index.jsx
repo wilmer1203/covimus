@@ -8,6 +8,7 @@ import ProjectCard from './components/ProjectCard';
 import ProjectDetailsModal from './components/ProjectDetailsModal';
 import { projects } from '../../data/projectsData';
 import SEO from '../../components/SEO';
+import { breadcrumbList } from '../../utils/schema';
 
 const Projects = () => {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -75,6 +76,29 @@ const Projects = () => {
     setIsModalOpen(true);
   };
 
+  const projectsJsonLd = useMemo(() => [
+    breadcrumbList([
+      { name: 'Inicio', url: 'https://covimus.org/' },
+      { name: 'Proyectos', url: 'https://covimus.org/projects' },
+    ]),
+    {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: 'Proyectos y Obras - COVIMUS',
+      url: 'https://covimus.org/projects',
+      mainEntity: {
+        '@type': 'ItemList',
+        itemListElement: projects.map((project, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: project?.name,
+          url: `https://covimus.org/projects#project-${project?.id}`,
+          image: project?.image ? `https://covimus.org${project.image}` : undefined,
+        })),
+      },
+    },
+  ], []);
+
   return (
     <>
       <SEO
@@ -84,6 +108,7 @@ const Projects = () => {
         ogTitle="Proyectos y Obras - COVIMUS"
         ogDescription="Explora el portafolio de obras y proyectos de infraestructura que están transformando Puerto La Cruz."
         canonical="https://covimus.org/projects"
+        jsonLd={projectsJsonLd}
       />
 
       <div className="min-h-screen bg-slate-950 font-sans selection:bg-accent/30">

@@ -1,9 +1,10 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-const SEO = ({ title, description, keywords, ogTitle, ogDescription, ogType = 'website', canonical, ogUrl }) => {
+const SEO = ({ title, description, keywords, ogTitle, ogDescription, ogType = 'website', canonical, ogUrl, jsonLd }) => {
     const fullTitle = `${title} | COVIMUS`;
     const url = ogUrl || canonical;
+    const jsonLdBlocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 
     return (
         <Helmet>
@@ -23,6 +24,13 @@ const SEO = ({ title, description, keywords, ogTitle, ogDescription, ogType = 'w
             <meta name="twitter:title" content={ogTitle || fullTitle} />
             <meta name="twitter:description" content={ogDescription || description} />
             {url && <meta property="twitter:url" content={url} />}
+
+            {/* Structured data (schema.org), page-specific */}
+            {jsonLdBlocks.map((block, index) => (
+                <script key={index} type="application/ld+json">
+                    {JSON.stringify(block)}
+                </script>
+            ))}
         </Helmet>
     );
 };

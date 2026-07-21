@@ -8,6 +8,7 @@ import ContactHero from './components/ContactHero';
 import ContactForm from './components/ContactForm';
 import ContactSidebar from './components/ContactSidebar';
 import SEO from '../../components/SEO';
+import { breadcrumbList } from '../../utils/schema';
 
 
 const ContactPage = () => {
@@ -31,6 +32,19 @@ const ContactPage = () => {
           ogTitle="Atención al Ciudadano - COVIMUS"
           ogDescription="¿Tienes un reporte sobre vialidad o infraestructura? Contáctanos directamente a través de nuestro portal oficial."
           canonical="https://covimus.org/contact"
+          jsonLd={[
+            breadcrumbList([
+              { name: 'Inicio', url: 'https://covimus.org/' },
+              { name: 'Atención al Ciudadano', url: 'https://covimus.org/contact' },
+            ]),
+            {
+              '@context': 'https://schema.org',
+              '@type': 'ContactPage',
+              name: 'Atención al Ciudadano - COVIMUS',
+              url: 'https://covimus.org/contact',
+              about: { '@type': 'GovernmentOrganization', name: 'COVIMUS' },
+            },
+          ]}
         />
 
         <Header />
