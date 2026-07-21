@@ -33,6 +33,7 @@ const Homepage = () => {
           keywords="COVIMUS, Puerto La Cruz, Sotillo, asfalto, vialidad, infraestructura, EPS, gobierno municipal"
           ogTitle="COVIMUS - Construyendo el Futuro de Sotillo"
           ogDescription="Corporación Municipal de Vialidad e Infraestructura - Transformando comunidades en Puerto La Cruz con transparencia y compromiso."
+          canonical="https://covimus.org/"
         />
 
         <Header />

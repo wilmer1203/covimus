@@ -30,6 +30,7 @@ const ContactPage = () => {
           keywords="Contacto COVIMUS, Reportes, Denuncias, Obras Públicas, Puerto La Cruz, Atención Ciudadana"
           ogTitle="Atención al Ciudadano - COVIMUS"
           ogDescription="¿Tienes un reporte sobre vialidad o infraestructura? Contáctanos directamente a través de nuestro portal oficial."
+          canonical="https://covimus.org/contact"
         />
 
         <Header />

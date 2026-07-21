@@ -38,6 +38,7 @@ const AboutUs = () => {
           keywords="COVIMUS, Historia, Misión, Visión, Valores, Sotillo, Puerto La Cruz, Gestión Pública"
           ogTitle="Nosotros - COVIMUS | Historia y Valores"
           ogDescription="Descubre el compromiso de COVIMUS con el desarrollo de la infraestructura y vialidad en el Municipio Sotillo."
+          canonical="https://covimus.org/about-us"
         />
 
         <Header />

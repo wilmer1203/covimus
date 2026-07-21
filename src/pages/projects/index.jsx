@@ -83,6 +83,7 @@ const Projects = () => {
         keywords="Proyectos, Obras, Asfaltado, Construcción, Sotillo, Puerto La Cruz, Avance de Obras"
         ogTitle="Proyectos y Obras - COVIMUS"
         ogDescription="Explora el portafolio de obras y proyectos de infraestructura que están transformando Puerto La Cruz."
+        canonical="https://covimus.org/projects"
       />
 
       <div className="min-h-screen bg-slate-950 font-sans selection:bg-accent/30">
