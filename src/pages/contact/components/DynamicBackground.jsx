@@ -16,6 +16,13 @@ const GridCell = ({ allImages }) => {
     const intervalTime = Math.random() * 4000 + 2000;
     
     const interval = setInterval(() => {
+        // Skip the swap entirely while the tab isn't visible — no point
+        // re-rendering/decoding images nobody can see, and it avoids ~40
+        // background timers competing for the main thread when the user
+        // comes back (they'd otherwise all fire their pending setTimeout
+        // around the same time).
+        if (document.hidden) return;
+
         if (allImages.length > 0) {
             const newImg = allImages[Math.floor(Math.random() * allImages.length)];
             setNextImage(newImg);
@@ -80,12 +87,14 @@ const DynamicBackground = () => {
     }
   }, []);
 
-  // Grid Configuration: Increased columns to make cells more vertical (better for 4:5 images)
-  const CELLS = Array.from({ length: 40 }); 
+  // Grid Configuration: reduced from 40 to 20 cells — each one runs its own
+  // setInterval + full-res image cross-fade, and this background sits behind
+  // the contact form where INP matters most (the user is typing).
+  const CELLS = Array.from({ length: 20 });
 
   return (
     <div className="absolute inset-0 z-0 overflow-hidden">
-        <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 grid-rows-4 h-full w-full">
+        <div className="grid grid-cols-4 md:grid-cols-5 lg:grid-cols-5 grid-rows-4 h-full w-full">
             {CELLS.map((_, index) => (
                 <GridCell key={index} allImages={allImages} />
             ))}
