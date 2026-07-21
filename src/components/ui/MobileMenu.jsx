@@ -76,24 +76,6 @@ const MobileMenu = ({ isOpen, onClose, navigationItems }) => {
         <div className="mt-auto pt-8 border-t border-border">
           <div className="flex items-center justify-center space-x-6">
             <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
-              aria-label="Twitter"
-            >
-              <Icon name="Twitter" size={20} />
-            </a>
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
-              aria-label="Facebook"
-            >
-              <Icon name="Facebook" size={20} />
-            </a>
-            <a
               href="https://www.instagram.com/covimusplc?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
               target="_blank"
               rel="noopener noreferrer"
