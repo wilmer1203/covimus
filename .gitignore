@@ -11,6 +11,9 @@ vite.config.*s.*
 # Configuración local de Claude Code
 .claude/
 
+# Artefactos de auditoría SEO (claude-seo)
+covimus.org-audit/
+
 # Documentos con datos personales (CVs, etc.)
 *.docx
 .vercel
