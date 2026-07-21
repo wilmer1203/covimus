@@ -1,0 +1,20 @@
+# COVIMUS
+
+> Corporación de Vialidad e Infraestructura del Municipio Sotillo (COVIMUS) es una
+> Empresa de Producción Social del Municipio Juan Antonio Sotillo, Anzoátegui,
+> Venezuela, creada mediante el Decreto N° 93 de 2004. Ejecuta y da mantenimiento
+> a obras de vialidad, asfaltado e infraestructura civil en Puerto La Cruz y sus
+> alrededores.
+
+## Páginas principales
+
+- [Inicio](https://covimus.org/): presentación institucional, indicadores de gestión (toneladas de asfalto colocadas, sectores atendidos) y aliados institucionales.
+- [Nosotros](https://covimus.org/about-us): historia (Decreto N° 93), misión, visión, valores y equipo directivo.
+- [Proyectos](https://covimus.org/projects): obras de vialidad e infraestructura ejecutadas, en ejecución y planificadas en el Municipio Sotillo.
+- [Atención al Ciudadano](https://covimus.org/contact): canal oficial para reportes, solicitudes y sugerencias sobre vialidad e infraestructura.
+
+## Contacto oficial
+
+- Dirección: C. Venezuela, Puerto La Cruz 6023, Anzoátegui, Venezuela.
+- Correo: covimuscomercial@gmail.com
+- Instagram: https://www.instagram.com/covimusplc
