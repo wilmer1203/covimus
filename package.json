@@ -44,6 +44,7 @@
   },
   "scripts": {
     "start": "vite",
+    "postinstall": "playwright install chromium",
     "build": "vite build --sourcemap && node scripts/prerender.mjs",
     "serve": "vite preview"
   },
