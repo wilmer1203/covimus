@@ -72,10 +72,12 @@ const HeroSection = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-         <Image 
+         <Image
           src="/assets/images/av_paseo.webp"
           alt="Paseo de la Cruz y el Mar - Puerto La Cruz"
           className="w-full h-full object-cover"
+          loading="eager"
+          fetchpriority="high"
          />
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/90"></div>
       </div>
