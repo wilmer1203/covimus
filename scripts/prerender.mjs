@@ -41,7 +41,7 @@ async function getLaunchOptions() {
 const ROUTES = ['/', '/about-us', '/projects', '/contact'];
 const DIST_DIR = path.resolve('dist');
 
-async function waitForStableDom(page, { timeoutMs = 3000, intervalMs = 250 } = {}) {
+async function waitForStableDom(page, { timeoutMs = 5000, intervalMs = 250 } = {}) {
   const deadline = Date.now() + timeoutMs;
   let previous = null;
   while (Date.now() < deadline) {
@@ -74,7 +74,13 @@ async function main() {
   try {
     for (const route of ROUTES) {
       const target = `${url}${route}`;
-      await page.goto(target, { waitUntil: 'networkidle', timeout: 30000 });
+      // 'networkidle' timed out in practice: the two static.rocket.new
+      // builder scripts and About Us's autoplaying videos keep some network
+      // activity going indefinitely, so "no connections for 500ms" never
+      // happens. 'load' (all initial resources loaded) is enough to get
+      // React mounted; waitForStableDom below is the real signal that the
+      // actual render (including framer-motion/CountUp) has settled.
+      await page.goto(target, { waitUntil: 'load', timeout: 45000 });
       await waitForStableDom(page);
 
       const html = await page.content();
