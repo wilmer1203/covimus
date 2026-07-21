@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, useSpring, useTransform, useInView } from 'framer-motion';
+import { motion, useSpring, useTransform, useInView, useReducedMotion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Icon from '../../../components/AppIcon';
 import Image from '../../../components/AppImage';
@@ -7,6 +7,7 @@ import Image from '../../../components/AppImage';
 const CountUp = ({ to, duration = 2, className }) => {
   const ref = React.useRef(null);
   const inView = useInView(ref, { once: true });
+  const prefersReducedMotion = useReducedMotion();
   const spring = useSpring(0, { duration: duration * 1000, bounce: 0 });
   const display = useTransform(spring, (current) => Math.round(current).toLocaleString('es-VE'));
 
@@ -15,6 +16,14 @@ const CountUp = ({ to, duration = 2, className }) => {
       spring.set(to);
     }
   }, [inView, to, spring]);
+
+  // Respect prefers-reduced-motion: show the final value immediately instead
+  // of animating. Also makes the number deterministic for anything that
+  // snapshots the page (screenshots, prerendering, audits) instead of
+  // capturing it mid-animation.
+  if (prefersReducedMotion) {
+    return <span className={className}>{to.toLocaleString('es-VE')}</span>;
+  }
 
   return <motion.span ref={ref} className={className}>{display}</motion.span>;
 };
