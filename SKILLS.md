@@ -1,6 +1,6 @@
 # Guía de Skills de Claude Code (COVIMUS)
 
-Este proyecto tiene instaladas dos skills de terceros para Claude Code. Este documento explica qué es cada una, cuándo usarla y los comandos principales. Ver también [CLAUDE.md](CLAUDE.md) para el contexto general del proyecto.
+Este proyecto tiene instaladas dos skills de terceros para Claude Code (Impeccable y claude-seo) más una skill propia del proyecto (`add-project`). Este documento explica qué es cada una, cuándo usarla y los comandos principales. Ver también [CLAUDE.md](CLAUDE.md) para el contexto general del proyecto.
 
 ## Impeccable — calidad de diseño visual
 
@@ -66,6 +66,26 @@ Lista completa de 24+ sub-skills (incluye `content`, `images`, `local`, `plan`, 
 - Después de auditorías grandes, la skill agrega un footer promocionando la comunidad del autor (`agricidaniel`) — es solo texto informativo del plugin, no representa a COVIMUS.
 - Comandos como `/seo local`, `/seo maps`, `/seo ecommerce` no aplican a este proyecto (no es negocio local con GBP ni e-commerce); se pueden ignorar.
 
+## add-project — alta de nuevas obras
+
+**Qué es:** skill propia de este proyecto (no de terceros) que reemplaza el flujo manual para agregar una obra nueva al portafolio: estandariza las fotos originales a WEBP (redimensiona, comprime, respeta orientación EXIF) y redacta la entrada de `src/data/projectsData.js` con el mismo tono institucional que las obras existentes.
+
+**Instalación:** local al proyecto, en `.claude/skills/add-project/`, pero a diferencia de Impeccable **sí se versiona en git** (la excepción está en `.gitignore`) porque codifica lógica propia de COVIMUS (esquema de datos, tono de los textos), no una herramienta genérica de terceros.
+
+**Cuándo usarla:** cada vez que haya una obra nueva que documentar en `/projects`, con fotos ya tomadas.
+
+**Flujo (siempre con pausas para revisión):**
+1. Recolecta los datos de la obra (nombre, sector, fechas, material, coordenadas, testimonio opcional).
+2. Corre `scripts/process_images.py` (Python + Pillow) sobre la carpeta de fotos originales — preset por defecto: máx. 1600px en el lado largo, calidad 80, techo ~300KB (baja calidad automáticamente si hace falta). Nunca toca `projectsData.js`.
+3. Muestra un preview obligatorio: las imágenes procesadas + el objeto JS completo propuesto, **antes** de escribir nada.
+4. Ajusta lo que se pida (texto, orden de fotos, portada) y vuelve a mostrar el preview hasta aprobación.
+5. Recién ahí escribe la entrada en `projectsData.js`.
+6. Nunca hace `git commit`/`push` por su cuenta — eso sigue requiriendo un pedido explícito y separado.
+
+Detalle completo del esquema de campos y de la convención de carpetas/nombres de imagen: `.claude/skills/add-project/reference/schema.md`. Guía de tono institucional para redactar descripciones: `.claude/skills/add-project/reference/house-style.md`.
+
+**Nota histórica:** antes existía `scripts/generate_projects.js`, un generador basado en un Excel de cuantificación de asfalto que escribía un export incompatible (`excelProjects`) que nada en el sitio importaba — si se hubiera ejecutado, habría borrado las 12 obras curadas del array `projects` sin que nadie lo notara. Fue eliminado; `add-project` es su reemplazo seguro.
+
 ## ¿Qué cambié → qué skill corro?
 
 | Cambié... | Corro... |
@@ -73,4 +93,5 @@ Lista completa de 24+ sub-skills (incluye `content`, `images`, `local`, `plan`, 
 | Animaciones, layout, espaciado, tipografía, color de una página existente | Impeccable (`audit`, `polish`, `layout`, `typeset`) |
 | `SEO.jsx`, meta tags, rutas, sitemap, dominio | claude-seo (`/seo page`, `/seo schema`, `/seo sitemap`) |
 | Una página completamente nueva | Ambas: primero Impeccable (`critique`/`polish`) para la UI, luego claude-seo (`/seo page`) para verificar que el SEO quedó bien |
-| Solo lógica/funcionalidad sin cambio visual ni de metadatos | Ninguna de las dos es necesaria |
+| Agregar una obra nueva al portafolio de `/projects` | `add-project` (procesa fotos + redacta la entrada, con preview antes de escribir) |
+| Solo lógica/funcionalidad sin cambio visual ni de metadatos | Ninguna es necesaria |

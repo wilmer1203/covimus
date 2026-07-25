@@ -85,4 +85,4 @@ Deployed to Vercel. The `dist/` folder is the build output. Vercel Analytics and
 
 ## Claude Code Skills
 
-Two third-party skills are installed: **Impeccable** (design/UX quality) and **claude-seo** (SEO auditing). See [SKILLS.md](SKILLS.md) for what each does and when to use them.
+Two third-party skills are installed: **Impeccable** (design/UX quality) and **claude-seo** (SEO auditing). There's also a project-authored skill, **add-project** (standardizes photos + drafts new entries for `src/data/projectsData.js`, with a mandatory preview before writing). See [SKILLS.md](SKILLS.md) for what each does and when to use them.

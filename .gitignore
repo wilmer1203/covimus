@@ -8,13 +8,20 @@ package-lock.json
 .idea/
 vite.config.*s.*
 
-# Configuración local de Claude Code
-.claude/
+# Configuración local de Claude Code (se versiona solo la skill add-project, propia de este proyecto)
+.claude/*
+!.claude/skills
+.claude/skills/*
+!.claude/skills/add-project
 
 # Artefactos de auditoría SEO (claude-seo)
 covimus.org-audit/
+covimus.org-audit-v2/
 
 # Documentos con datos personales (CVs, etc.)
 *.docx
 .vercel
 .env*
+
+# Buzón de fotos crudas para la skill add-project (ver .claude/skills/add-project/SKILL.md)
+/fotos-pendientes/
