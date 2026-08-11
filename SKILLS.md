@@ -72,7 +72,7 @@ Lista completa de 24+ sub-skills (incluye `content`, `images`, `local`, `plan`, 
 
 **Instalación:** local al proyecto, en `.claude/skills/add-project/`, pero a diferencia de Impeccable **sí se versiona en git** (la excepción está en `.gitignore`) porque codifica lógica propia de COVIMUS (esquema de datos, tono de los textos), no una herramienta genérica de terceros.
 
-**Cuándo usarla:** cada vez que haya una obra nueva que documentar en `/projects`, con fotos ya tomadas.
+**Cuándo usarla:** cada vez que haya una obra nueva que documentar en `/projects`, con fotos ya tomadas. No aplica a `/contrataciones` (ver más abajo): esa carga sigue siendo manual, reutilizando solo `process_images.py` con `--dest-root ima_contratos`.
 
 **Flujo (siempre con pausas para revisión):**
 1. Recolecta los datos de la obra (nombre, sector, fechas, material, coordenadas, testimonio opcional).

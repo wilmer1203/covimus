@@ -12,6 +12,7 @@ const Footer = () => {
         { label: 'Inicio', path: '/' },
         { label: 'Nosotros', path: '/about-us' },
         { label: 'Proyectos', path: '/projects' },
+        { label: 'Contrataciones', path: '/contrataciones' },
       ],
     },
     {

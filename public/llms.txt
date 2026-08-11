@@ -11,6 +11,7 @@
 - [Inicio](https://covimus.org/): presentación institucional, indicadores de gestión (toneladas de asfalto colocadas, sectores atendidos) y aliados institucionales.
 - [Nosotros](https://covimus.org/about-us): historia (Decreto N° 93), misión, visión, valores y equipo directivo.
 - [Proyectos](https://covimus.org/projects): obras de vialidad e infraestructura ejecutadas, en ejecución y planificadas en el Municipio Sotillo.
+- [Contrataciones](https://covimus.org/contrataciones): obras ejecutadas bajo contrato para entes públicos y privados, incluyendo trabajos de vialidad y asfaltado en instalaciones industriales.
 - [Atención al Ciudadano](https://covimus.org/contact): canal oficial para reportes, solicitudes y sugerencias sobre vialidad e infraestructura.
 
 ## Contacto oficial

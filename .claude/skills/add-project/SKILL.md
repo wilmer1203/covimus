@@ -48,6 +48,8 @@ python .claude/skills/add-project/scripts/process_images.py \
   --year <año>
 ```
 
+El script acepta también `--dest-root` (default `ima_projects`) para escribir en un árbol de imágenes distinto — por ejemplo `--dest-root ima_contratos` para el apartado de Contrataciones (`public/assets/images/ima_contratos/<año>/<CarpetaContrato>/`). Esta skill sigue siendo solo para obras de `/projects`; cargar una contratación es hoy un flujo manual que reutiliza el mismo script pero no pasa por `add-project` ni escribe en `projectsData.js`.
+
 Defaults del preset (WEBP, máx. 1600px en el lado largo, calidad 80, techo ~300KB con reducción automática de calidad si se pasa): están definidos como constantes al inicio de `process_images.py` y son ajustables por flag (`--max-dim`, `--quality`, `--size-ceiling-kb`, `--min-quality`) si el usuario pide algo distinto para esta obra en particular.
 
 El script nunca toca `projectsData.js`. Devuelve un JSON por stdout con la carpeta destino, cada imagen procesada (archivo original, peso antes/después, dimensiones finales, calidad usada, y `oversize: true` si no logró bajar del techo ni al mínimo de calidad) y la ruta de portada (`coverImage`, la primera imagen).

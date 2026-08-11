@@ -4,6 +4,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import ErrorBoundary from "./components/ErrorBoundary";
 import NotFound from "./pages/NotFound";
 import Projects from './pages/projects';
+import Contracts from './pages/contracts';
 import AboutUs from './pages/about-us';
 import Contact from './pages/contact';
 import Homepage from './pages/homepage';
@@ -19,6 +20,7 @@ const Routes = () => {
           {/* Define your route here */}
           <Route path="/" element={<Homepage />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/contrataciones" element={<Contracts />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />

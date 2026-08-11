@@ -22,6 +22,7 @@ const Header = () => {
     { path: '/', label: 'Inicio', icon: 'Home' },
     { path: '/about-us', label: 'Nosotros', icon: 'Users' },
     { path: '/projects', label: 'Proyectos', icon: 'Briefcase' },
+    { path: '/contrataciones', label: 'Contrataciones', icon: 'FileSignature' },
   ];
 
   const isActivePath = (path) => location?.pathname === path;

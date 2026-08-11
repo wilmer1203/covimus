@@ -38,7 +38,7 @@ async function getLaunchOptions() {
   };
 }
 
-const ROUTES = ['/', '/about-us', '/projects', '/contact'];
+const ROUTES = ['/', '/about-us', '/projects', '/contrataciones', '/contact'];
 const DIST_DIR = path.resolve('dist');
 
 async function waitForStableDom(page, { timeoutMs = 5000, intervalMs = 250 } = {}) {

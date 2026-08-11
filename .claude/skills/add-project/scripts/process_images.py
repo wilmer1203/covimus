@@ -2,8 +2,11 @@
 """Standardize raw project photos into the COVIMUS site's WEBP convention.
 
 Reads a folder of raw photos and writes resized/compressed WEBP files into
-public/assets/images/ima_projects/<year>/<dest-folder>/<slug>-NN.webp,
+public/assets/images/<dest-root>/<year>/<dest-folder>/<slug>-NN.webp,
 matching the naming convention already used across src/data/projectsData.js.
+<dest-root> defaults to "ima_projects" (the add-project skill's tree); pass
+--dest-root ima_contratos to write into the separate Contrataciones image
+tree instead, without changing add-project's own default behavior.
 
 Never touches src/data/projectsData.js -- prints a JSON summary to stdout so
 the calling conversation can build a preview before anything is written there.
@@ -35,6 +38,11 @@ def parse_args():
     p.add_argument("--slug", required=True, help="kebab-case file-name prefix, e.g. av-municipal-cristina-suite")
     p.add_argument("--dest-folder", required=True, help="Project folder name, e.g. Cristina_Suite")
     p.add_argument("--year", required=True, help="Year the work was executed, e.g. 2026")
+    p.add_argument(
+        "--dest-root",
+        default="ima_projects",
+        help='Image tree under public/assets/images/ (default: "ima_projects"; use "ima_contratos" for Contrataciones)',
+    )
     p.add_argument("--max-dim", type=int, default=DEFAULT_MAX_DIM)
     p.add_argument("--quality", type=int, default=DEFAULT_QUALITY)
     p.add_argument("--size-ceiling-kb", type=int, default=DEFAULT_SIZE_CEILING_KB)
@@ -88,7 +96,7 @@ def main():
     if not source_dir.is_dir():
         fail(f"Source folder not found: {source_dir}")
 
-    dest_dir = REPO_ROOT / "public" / "assets" / "images" / "ima_projects" / str(args.year) / args.dest_folder
+    dest_dir = REPO_ROOT / "public" / "assets" / "images" / args.dest_root / str(args.year) / args.dest_folder
     if dest_dir.exists() and any(dest_dir.iterdir()) and not args.force:
         fail(
             f"Destination folder already exists and is not empty: {dest_dir}. "

@@ -14,6 +14,12 @@ export default function handler(req, res) {
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://covimus.org/contrataciones</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://covimus.org/about-us</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
