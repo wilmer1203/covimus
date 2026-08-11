@@ -80,7 +80,7 @@ export const leadershipTeam = [
     },
     {
         id: "Talento Humano",
-        name: "Vacante",
+        name: "Lcda. Gleni Bello",
         position: "Gerente de RRHH",
         credentials: "Gestión de Talento Humano",
         bio: "Encargada de la gestión del capital humano, bienestar laboral y capacitación continua del personal de COVIMUS.",
@@ -94,7 +94,7 @@ export const leadershipTeam = [
     },
     {
         id: "Consultoría",
-        name: "Vacante",
+        name: "Abg. Rodnel Pereira",
         position: "Consultor Jurídico",
         credentials: "Abogado / Especialista Administrativo",
         bio: "Vela por la legalidad y el cumplimiento normativo en cada acto administrativo, brindando seguridad jurídica a las operaciones.",
@@ -108,7 +108,7 @@ export const leadershipTeam = [
     },
     {
         id: "Operaciones",
-        name: "Vacante",
+        name: "Ing Ricardo Sánchez",
         position: "Gerente de Operaciones",
         credentials: "Ingeniero",
         bio: "Coordina la maquinaria y equipos en terreno, asegurando el avance físico de las obras bajo los estándares de calidad.",
@@ -164,7 +164,7 @@ export const leadershipTeam = [
     },
     {
         id: "CalidadSeguimiento",
-        name: "Ing. Ricardo Sanchez",
+        name: "Vacante",
         position: "Coordinador de Control de Calidad y Seguimiento",
         credentials: "Ingeniero",
         bio: "Garantiza que las obras ejecutadas cumplan con los estándares de calidad técnicos y normativos establecidos.",
@@ -178,7 +178,7 @@ export const leadershipTeam = [
     },
     {
         id: "Contrataciones",
-        name: "Vacante",
+        name: "T.S.U. Ruth Días",
         position: "Jefe de Contrataciones",
         credentials: "Abogado",
         bio: "Gestión y control de las contrataciones públicas de la corporación para garantizar la transparencia legal.",
@@ -220,7 +220,7 @@ export const leadershipTeam = [
     },
     {
         id: "Bienes",
-        name: "Leonardo Guadarrama",
+        name: "Lcda. Milagro Lezama",
         position: "Jefe de Bienes",
         credentials: "Administración de Bienes",
         bio: "Responsable del registro, custodia y control de los bienes muebles e inmuebles de la corporación.",
@@ -262,7 +262,7 @@ export const leadershipTeam = [
     },
     {
         id: "BienestarSocial",
-        name: "T.S.U Elis Aguilera",
+        name: "Vacante",
         position: "Jefe de Bienestar Social",
         credentials: "Técnico Superior Universitario",
         bio: "Encargada de gestionar los programas de bienestar social y beneficios del personal de la corporación.",
