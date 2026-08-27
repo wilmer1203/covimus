@@ -1,217 +1,193 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Icon from '../../../components/AppIcon';
 import Image from '../../../components/AppImage';
-import { contracts, totalContractTons } from '../../../data/contractsData';
+import { contracts } from '../../../data/contractsData';
+import { hotAsphalt, coldAsphalt, compactedGravelPlan, heroFrenteA } from '../../../data/asphaltStatsData';
 import CountUp from './CountUp';
 
+const frenteB = contracts.find((contract) => contract.front === 'Frente B');
+
+const EASE = [0.22, 1, 0.36, 1];
+
 const HeroSection = () => {
-  const projectHighlights = [
-  {
-    id: 1,
-    title: "Vialidad Urbana Sotillo",
-    description: "Mantenimiento y asfaltado de avenidas principales",
-    image: "https://img.rocket.new/generatedImages/rocket_gen_img_15102ed5d-1768010396258.png",
-    imageAlt: "Modern highway with multiple lanes stretching through urban landscape with clear blue sky and modern infrastructure",
-    status: "En Progreso",
-    progress: 85
-  },
-  {
-    id: 2,
-    title: "Hospital General del Este",
-    description: "Ampliación de servicios de salud comunitaria",
-    image: "https://images.unsplash.com/photo-1658131550268-8d86f719a041",
-    imageAlt: "Modern hospital building exterior with white facade, large windows, and emergency entrance visible in daylight",
-    status: "Completado",
-    progress: 100
-  },
-  {
-    id: 3,
-    title: "Escuela Técnica Industrial",
-    description: "Renovación integral de infraestructura educativa",
-    image: "https://images.unsplash.com/photo-1679296036547-b57ae4b01b82",
-    imageAlt: "Contemporary school building with red brick exterior, multiple floors, large windows and students visible in courtyard area",
-    status: "Planificación",
-    progress: 25
-  }];
-
-
-  const [currentProject, setCurrentProject] = React.useState(0);
-
-  React.useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentProject((prev) => (prev + 1) % projectHighlights?.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
+  const reduce = useReducedMotion();
+  const rise = reduce ? {} : { initial: { opacity: 0, y: 24 }, animate: { opacity: 1, y: 0 } };
+  const slide = reduce ? {} : { initial: { opacity: 0, x: 28 }, animate: { opacity: 1, x: 0 } };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
+    <section className="relative min-h-screen flex flex-col justify-start lg:justify-center overflow-hidden">
+      {/* Fondo */}
       <div className="absolute inset-0 z-0">
-         <Image
+        <Image
           src="/assets/images/av_paseo.webp"
           alt="Paseo de la Cruz y el Mar - Puerto La Cruz"
           className="w-full h-full object-cover"
           loading="eager"
           fetchpriority="high"
-         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/90"></div>
+        />
+        {/* Wash parejo para legibilidad de datos + anclaje inferior para la banda 2 */}
+        <div className="absolute inset-0 bg-slate-950/80" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-slate-950/75" />
       </div>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            
-            {/* Text Content */}
-            <div className="space-y-8">
-                <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8 }}
-                >
-                    <div className="inline-flex items-center space-x-2 border-l-4 border-accent pl-4 mb-6">
-                        <span className="text-accent font-bold tracking-[0.2em] uppercase text-sm">E.P.S. COVIMUS S.A.</span>
-                    </div>
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-14 lg:pt-16 lg:pb-10">
 
-                    <h1 className="text-4xl md:text-6xl font-black text-white leading-[0.95] tracking-tight mb-6">
-                        TRANSFORMANDO <br/>
-                        LA <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-yellow-200">VIALIDAD</span> <br/>
-                        DE SOTILLO
-                    </h1>
+        {/* BANDA 1 — intro + la cifra que manda */}
+        <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-x-14 gap-y-10 lg:items-center">
 
-                    <p className="text-lg md:text-xl text-slate-300 max-w-xl leading-relaxed font-light border-l border-white/10 pl-4 py-2">
-                        Ejecución de proyectos de ingeniería civil y asfaltado bajo un modelo de gestión social eficiente. Construyendo el futuro de Puerto La Cruz.
-                    </p>
-                </motion.div>
+          {/* Intro */}
+          <div className="max-w-xl">
+            <motion.div {...rise} transition={{ duration: 0.7, ease: EASE }} className="mb-5">
+              <span className="text-accent text-xs font-semibold tracking-[0.18em] uppercase">E.P.S. COVIMUS S.A.</span>
+              <div className="mt-2 h-px w-6 bg-accent" />
+            </motion.div>
 
-                <motion.div 
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4, duration: 0.8 }}
-                    className="flex flex-col sm:flex-row gap-4 pt-4"
-                >
-                    <Link to="/projects">
-                        <button className="w-full sm:w-auto px-8 py-4 bg-accent hover:bg-yellow-400 text-slate-900 font-bold rounded-none flex items-center justify-center gap-3 transition-all uppercase tracking-wider group">
-                            <span>Ver Proyectos</span>
-                            <Icon name="ArrowRight" size={20} className="group-hover:translate-x-1 transition-transform" />
-                        </button>
-                    </Link>
-                    <Link to="/contact">
-                        <button className="w-full sm:w-auto px-8 py-4 border border-white text-white hover:bg-white hover:text-slate-900 font-bold rounded-none flex items-center justify-center gap-3 transition-all uppercase tracking-wider">
-                            <span>Contáctanos</span>
-                        </button>
-                    </Link>
-                </motion.div>
+            <motion.h1
+              {...rise}
+              transition={{ duration: 0.7, delay: 0.05, ease: EASE }}
+              className="text-4xl md:text-5xl lg:text-[3.4rem] font-black text-white leading-[0.95] tracking-tight"
+            >
+              TRANSFORMANDO <br />
+              LA <span className="text-accent">VIALIDAD</span> <br />
+              DE SOTILLO
+            </motion.h1>
+
+            <motion.p
+              {...rise}
+              transition={{ duration: 0.7, delay: 0.1, ease: EASE }}
+              className="mt-5 text-base md:text-lg text-white/75 leading-relaxed"
+            >
+              Ejecución de proyectos de ingeniería civil y asfaltado bajo un modelo de gestión social
+              eficiente. Construyendo el futuro de Puerto La Cruz.
+            </motion.p>
+
+            <motion.div
+              {...rise}
+              transition={{ duration: 0.7, delay: 0.15, ease: EASE }}
+              className="mt-7 flex flex-col sm:flex-row gap-4"
+            >
+              <Link to="/projects">
+                <button className="w-full sm:w-auto px-8 py-4 bg-accent hover:bg-yellow-400 text-slate-900 font-bold rounded-none flex items-center justify-center gap-3 transition-all uppercase tracking-wider group">
+                  <span>Ver Proyectos</span>
+                  <Icon name="ArrowRight" size={20} className="group-hover:translate-x-1 transition-transform" />
+                </button>
+              </Link>
+              <Link to="/contact">
+                <button className="w-full sm:w-auto px-8 py-4 border border-white text-white hover:bg-white hover:text-slate-900 font-bold rounded-none flex items-center justify-center gap-3 transition-all uppercase tracking-wider">
+                  <span>Contáctanos</span>
+                </button>
+              </Link>
+            </motion.div>
+          </div>
+
+          {/* Asfaltado en Caliente — la única cifra gigante */}
+          <motion.div
+            {...slide}
+            transition={{ duration: 0.8, delay: 0.2, ease: EASE }}
+            className="border border-white/10 bg-slate-950/45 backdrop-blur-sm p-6 lg:p-7"
+          >
+            <p className="font-mono text-[0.7rem] uppercase tracking-[0.15em] text-accent">Asfaltado en Caliente</p>
+            <p className="mt-1.5 text-sm text-white/70">Gestión Dr. Jesús Marcano · Sumatoria total</p>
+
+            <div className="mt-4 flex items-baseline gap-3">
+              <CountUp
+                to={hotAsphalt.totalTons}
+                className="font-mono font-black text-accent text-5xl lg:text-6xl leading-none tracking-tight"
+              />
+              <span className="font-mono text-base text-white/55">Ton</span>
             </div>
 
-            {/* Visual Stats / Highlights (Tachitec/High-End Style) */}
-            <div className="hidden lg:flex relative h-full min-h-[500px] items-center justify-end">
-                 {/* Floating Abstract Glow */}
-                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
-
-                 {/* Bento Grid Layout - Asymmetric & Dynamic */}
-                 <div className="relative w-full max-w-lg grid grid-cols-6 gap-6 p-6">
-
-                    {/* Card 1: Asphalt Management Stats */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                        animate={{ opacity: 1, scale: 1, y: 0 }}
-                        transition={{ delay: 0.5, type: 'spring' }}
-                        className="col-span-3 bg-gradient-to-br from-slate-900/90 to-black/90 backdrop-blur-xl border border-white/10 p-6 rounded-[2rem] shadow-2xl relative overflow-hidden group hover:border-accent/30 transition-colors"
-                    >
-                        <div className="relative z-10">
-                            <div className="flex items-center gap-2 mb-2">
-                                <div className="h-2 w-2 rounded-full bg-accent animate-pulse" />
-                                <span className="text-accent font-bold uppercase tracking-widest text-[10px]">Gestión Dr. Jesús Marcano</span>
-                            </div>
-                            <h3 className="text-5xl font-black text-white mb-2 tracking-tighter">
-                                <CountUp to={9747} className="" />
-                            </h3>
-                            <p className="text-slate-300 font-medium text-base leading-tight">
-                                Toneladas Colocadas <br/> <span className="text-sm text-slate-500 font-normal">Desde 09/09/2025</span>
-                            </p>
-                        </div>
-                    </motion.div>
-
-                    {/* Card 2: Contrataciones (separate from municipal works) */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                        animate={{ opacity: 1, scale: 1, y: 0 }}
-                        transition={{ delay: 0.6, type: 'spring' }}
-                        className="col-span-3 bg-gradient-to-br from-slate-900/90 to-black/90 backdrop-blur-xl border border-white/10 p-6 rounded-[2rem] shadow-2xl relative overflow-hidden group hover:border-[#5B8DBE]/30 transition-colors"
-                    >
-                        <div className="relative z-10">
-                            <div className="flex items-center gap-2 mb-2">
-                                <div className="h-2 w-2 rounded-full bg-[#5B8DBE] animate-pulse" />
-                                <span className="text-[#5B8DBE] font-bold uppercase tracking-widest text-[10px]">Contrataciones</span>
-                            </div>
-                            <h3 className="text-5xl font-black text-[#FFCC00] mb-2 tracking-tighter">
-                                <CountUp to={totalContractTons} />
-                            </h3>
-                            <p className="text-slate-300 font-medium text-base leading-tight">
-                                Toneladas Colocadas <br /> <span className="text-sm text-slate-500 font-normal">{contracts.length} Contrato{contracts.length !== 1 ? 's' : ''} Ejecutado{contracts.length !== 1 ? 's' : ''}</span>
-                            </p>
-                        </div>
-                    </motion.div>
-
-                    {/* Card 3: Plant Production */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.7, type: 'spring' }}
-                        className="col-span-2 bg-white/5 backdrop-blur-md border border-white/10 p-5 rounded-[2rem] hover:bg-white/10 transition-all group"
-                    >
-                         <div className="flex flex-col justify-center h-full">
-                            <h4 className="text-[#FFCC00] font-bold uppercase tracking-widest text-[11px] mb-1">Producción Mensual</h4>
-                            <h3 className="text-3xl font-black text-white mb-1 tracking-tighter">
-                                <CountUp to={1200} /><span className="text-slate-500 text-sm ml-1 font-bold">Tons</span>
-                            </h3>
-                        </div>
-                    </motion.div>
-
-                    {/* Card 4: Localities */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 0 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.8, type: 'spring' }}
-                         className="col-span-2 bg-white/5 backdrop-blur-md border border-white/10 p-5 rounded-[2rem] hover:bg-white/10 transition-all group"
-                    >
-                         <div className="flex flex-col justify-center h-full">
-                            <h4 className="text-[#FFCC00] font-bold uppercase tracking-widest text-[11px] mb-1">Localidades</h4>
-                            <h3 className="text-3xl font-black text-white mb-1 tracking-tighter">
-                                <CountUp to={25} />
-                            </h3>
-                            <p className="text-slate-400 text-xs font-medium">Sectores Atendidos</p>
-                        </div>
-                    </motion.div>
-
-                    {/* Card 5: Years of institutional history */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.9, type: 'spring' }}
-                         className="col-span-2 bg-white/5 backdrop-blur-md border border-white/10 p-5 rounded-[2rem] hover:bg-white/10 transition-all group"
-                    >
-                         <div className="flex flex-col justify-center h-full">
-                            <h4 className="text-[#FFCC00] font-bold uppercase tracking-widest text-[11px] mb-1">Años</h4>
-                            <h3 className="text-3xl font-black text-[#FFCC00] mb-1 tracking-tighter">
-                                <CountUp to={17} />
-                            </h3>
-                            <p className="text-slate-400 text-xs font-medium">Transformando Sotillo</p>
-                        </div>
-                    </motion.div>
-
-                 </div>
+            <div className="mt-5 flex gap-8 border-t border-white/15 pt-3.5">
+              <div>
+                <p className="text-[0.7rem] uppercase tracking-wide text-white/55">Año 2025</p>
+                <p className="mt-1 font-mono text-2xl text-white"><CountUp to={hotAsphalt.year2025Tons} /></p>
+                <p className="mt-0.5 text-[0.7rem] text-white/45">Total del año</p>
+              </div>
+              <div className="border-l border-white/15 pl-8">
+                <p className="text-[0.7rem] uppercase tracking-wide text-white/55">Año 2026</p>
+                <p className="mt-1 font-mono text-2xl text-white"><CountUp to={hotAsphalt.year2026Tons} /></p>
+                <p className="mt-0.5 text-[0.7rem] text-white/45">{hotAsphalt.year2026PeriodLabel}</p>
+              </div>
             </div>
+          </motion.div>
         </div>
+
+        {/* BANDA 2 — las 4 cifras restantes, cada una con su tratamiento */}
+        <motion.div
+          {...rise}
+          transition={{ duration: 0.7, delay: 0.3, ease: EASE }}
+          className="mt-8 lg:mt-6 grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4 items-start"
+        >
+          {/* Frío — masa navy sólida */}
+          <div className="bg-[#243F60] p-4 lg:p-5 flex flex-col justify-between min-h-[7rem] lg:min-h-[7.5rem]">
+            <p className="text-[0.7rem] uppercase tracking-wide text-white/70 font-semibold">Asfaltado en Frío</p>
+            <div>
+              <p className="font-mono font-black text-accent text-3xl leading-none">
+                <CountUp to={coldAsphalt.year2026Tons} />
+                <span className="text-white/55 text-sm ml-1.5 font-bold">Ton</span>
+              </p>
+              <p className="mt-1.5 text-[0.7rem] text-white/60">Suma total · Año 2026</p>
+            </div>
+          </div>
+
+          {/* Ripio — solo contorno, subrayado amarillo */}
+          <div className="border border-white/15 p-4 lg:p-5 flex flex-col justify-between min-h-[7rem] lg:min-h-[7.5rem]">
+            <p className="text-[0.7rem] uppercase tracking-wide text-white/60 font-semibold">Plan Ripio Compactado</p>
+            <div>
+              <p className="font-mono font-black text-white text-3xl leading-none">
+                <CountUp to={compactedGravelPlan.year2026Tons} />
+                <span className="text-white/45 text-sm ml-1.5 font-bold">Ton</span>
+              </p>
+              <div className="mt-2 h-0.5 w-5 bg-accent" />
+              <p className="mt-1.5 text-[0.7rem] text-white/55">Suma total · Año 2026</p>
+            </div>
+          </div>
+
+          {/* Contrataciones — Frente A + Frente B bajo una etiqueta compartida */}
+          <div className="col-span-2">
+            <span className="inline-block bg-[#C00000] text-white text-[0.7rem] font-bold uppercase tracking-wide px-2.5 py-1 mb-2">
+              Contrataciones
+            </span>
+            <div className="grid grid-cols-2 gap-3 lg:gap-4">
+              <div className="bg-[#C00000]/12 border border-[#C00000]/35 p-4 lg:p-5 flex flex-col justify-between min-h-[7rem] lg:min-h-[7.5rem]">
+                <p className="text-[0.7rem] uppercase tracking-wide text-white/80 font-semibold">{heroFrenteA.front}</p>
+                <div>
+                  <p className="font-mono font-black text-accent text-2xl leading-none">
+                    <CountUp to={heroFrenteA.tons} />
+                    <span className="text-white/50 text-xs ml-1.5 font-bold">Ton</span>
+                  </p>
+                  <p className="mt-1.5 font-mono text-[0.7rem] text-white/55">Contrato {heroFrenteA.contractNumber}</p>
+                </div>
+              </div>
+              {frenteB && (
+                <div className="bg-[#C00000]/12 border border-[#C00000]/35 p-4 lg:p-5 flex flex-col justify-between min-h-[7rem] lg:min-h-[7.5rem]">
+                  <p className="text-[0.7rem] uppercase tracking-wide text-white/80 font-semibold">{frenteB.front}</p>
+                  <div>
+                    <p className="font-mono font-black text-accent text-2xl leading-none">
+                      <CountUp to={frenteB.tons} />
+                      <span className="text-white/50 text-xs ml-1.5 font-bold">Ton</span>
+                    </p>
+                    <p className="mt-1.5 font-mono text-[0.7rem] text-white/55">Contrato {frenteB.contractNumber}</p>
+                    <p className="font-mono text-[0.7rem] text-white/45">PDVSA · TAECJAA</p>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </motion.div>
       </div>
-      
-      {/* Bottom Scroll Indicator */}
+
+      {/* Indicador de scroll */}
       <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-slate-950 to-transparent flex items-end justify-center pb-8 z-20 pointer-events-none">
-         <div className="animate-bounce text-white/30">
-            <Icon name="ChevronDown" size={32} />
-         </div>
+        <motion.div
+          className="text-white/30"
+          animate={reduce ? undefined : { y: [0, 8, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+        >
+          <Icon name="ChevronDown" size={32} />
+        </motion.div>
       </div>
     </section>
   );
