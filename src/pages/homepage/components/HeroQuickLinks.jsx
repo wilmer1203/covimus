@@ -11,6 +11,7 @@ const items = [
   {
     icon: 'Factory',
     value: '1.200',
+    unit: 'Tons',
     label: 'Producción Mensual',
     sub: 'Capacidad de la planta de asfalto',
     href: '#planta-asfalto',
@@ -39,38 +40,39 @@ const scrollToPlant = (e) => {
   el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
 };
 
-const Cell = ({ item }) => (
-  <div className="group flex items-center gap-4 px-2 py-6 sm:px-6 sm:py-8 transition-colors hover:bg-white/[0.03]">
-    <span className="shrink-0 text-white/40 transition-colors group-hover:text-accent">
-      <Icon name={item.icon} size={22} />
-    </span>
-    <div className="min-w-0 flex-1">
-      <p className="font-mono text-2xl font-black leading-none text-white">{item.value}</p>
-      <p className="mt-1.5 text-xs uppercase tracking-wide text-white/60 transition-colors group-hover:text-accent">
-        {item.label}
-      </p>
-      <p className="mt-0.5 truncate text-xs text-white/45">{item.sub}</p>
+const Card = ({ item }) => (
+  <div className="group h-full rounded-[2rem] border border-white/10 bg-white/[0.04] p-6 transition-colors hover:bg-white/[0.08] hover:border-accent/30">
+    <div className="flex items-start justify-between">
+      <div className="flex size-11 items-center justify-center rounded-2xl bg-white/5 text-accent transition-colors group-hover:bg-accent group-hover:text-slate-900">
+        <Icon name={item.icon} size={20} />
+      </div>
+      <Icon
+        name="ArrowRight"
+        size={18}
+        className="mt-1 text-slate-600 transition-all group-hover:translate-x-1 group-hover:text-accent"
+      />
     </div>
-    <Icon
-      name="ArrowRight"
-      size={16}
-      className="shrink-0 text-white/25 transition-all group-hover:translate-x-1 group-hover:text-accent"
-    />
+    <p className="mt-4 text-3xl font-black tracking-tight text-white">
+      {item.value}
+      {item.unit && <span className="ml-1.5 text-sm font-bold text-slate-500">{item.unit}</span>}
+    </p>
+    <p className="mt-1 text-[11px] font-bold uppercase tracking-widest text-accent">{item.label}</p>
+    <p className="mt-1 text-xs text-slate-400">{item.sub}</p>
   </div>
 );
 
 const HeroQuickLinks = () => (
-  <section className="border-y border-white/10 bg-slate-950">
+  <section className="bg-slate-950 py-10">
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div className="grid grid-cols-1 divide-y divide-white/10 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
         {items.map((item) =>
           item.to ? (
             <Link key={item.label} to={item.to}>
-              <Cell item={item} />
+              <Card item={item} />
             </Link>
           ) : (
             <a key={item.label} href={item.href} onClick={scrollToPlant}>
-              <Cell item={item} />
+              <Card item={item} />
             </a>
           )
         )}
