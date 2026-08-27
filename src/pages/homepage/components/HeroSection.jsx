@@ -1,33 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { motion, useSpring, useTransform, useInView, useReducedMotion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Icon from '../../../components/AppIcon';
 import Image from '../../../components/AppImage';
-import { contracts, totalContractTons } from '../../../data/contractsData';
-
-const CountUp = ({ to, duration = 2, className }) => {
-  const ref = React.useRef(null);
-  const inView = useInView(ref, { once: true });
-  const prefersReducedMotion = useReducedMotion();
-  const spring = useSpring(0, { duration: duration * 1000, bounce: 0 });
-  const display = useTransform(spring, (current) => Math.round(current).toLocaleString('es-VE'));
-
-  useEffect(() => {
-    if (inView) {
-      spring.set(to);
-    }
-  }, [inView, to, spring]);
-
-  // Respect prefers-reduced-motion: show the final value immediately instead
-  // of animating. Also makes the number deterministic for anything that
-  // snapshots the page (screenshots, prerendering, audits) instead of
-  // capturing it mid-animation.
-  if (prefersReducedMotion) {
-    return <span className={className}>{to.toLocaleString('es-VE')}</span>;
-  }
-
-  return <motion.span ref={ref} className={className}>{display}</motion.span>;
-};
 
 const HeroSection = () => {
   const projectHighlights = [
@@ -83,11 +58,10 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/90"></div>
       </div>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 lg:pt-24">
+
             {/* Text Content */}
-            <div className="space-y-8">
+            <div className="max-w-3xl space-y-8">
                 <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -127,107 +101,6 @@ const HeroSection = () => {
                     </Link>
                 </motion.div>
             </div>
-
-            {/* Visual Stats / Highlights (Tachitec/High-End Style) */}
-            <div className="hidden lg:flex relative h-full min-h-[500px] items-center justify-end">
-                 {/* Floating Abstract Glow */}
-                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
-
-                 {/* Bento Grid Layout - Asymmetric & Dynamic */}
-                 <div className="relative w-full max-w-lg grid grid-cols-6 gap-6 p-6">
-
-                    {/* Card 1: Asphalt Management Stats */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                        animate={{ opacity: 1, scale: 1, y: 0 }}
-                        transition={{ delay: 0.5, type: 'spring' }}
-                        className="col-span-3 bg-gradient-to-br from-slate-900/90 to-black/90 backdrop-blur-xl border border-white/10 p-6 rounded-[2rem] shadow-2xl relative overflow-hidden group hover:border-accent/30 transition-colors"
-                    >
-                        <div className="relative z-10">
-                            <div className="flex items-center gap-2 mb-2">
-                                <div className="h-2 w-2 rounded-full bg-accent animate-pulse" />
-                                <span className="text-accent font-bold uppercase tracking-widest text-[10px]">Gestión Dr. Jesús Marcano</span>
-                            </div>
-                            <h3 className="text-5xl font-black text-white mb-2 tracking-tighter">
-                                <CountUp to={9747} className="" />
-                            </h3>
-                            <p className="text-slate-300 font-medium text-base leading-tight">
-                                Toneladas Colocadas <br/> <span className="text-sm text-slate-500 font-normal">Desde 09/09/2025</span>
-                            </p>
-                        </div>
-                    </motion.div>
-
-                    {/* Card 2: Contrataciones (separate from municipal works) */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                        animate={{ opacity: 1, scale: 1, y: 0 }}
-                        transition={{ delay: 0.6, type: 'spring' }}
-                        className="col-span-3 bg-gradient-to-br from-slate-900/90 to-black/90 backdrop-blur-xl border border-white/10 p-6 rounded-[2rem] shadow-2xl relative overflow-hidden group hover:border-[#5B8DBE]/30 transition-colors"
-                    >
-                        <div className="relative z-10">
-                            <div className="flex items-center gap-2 mb-2">
-                                <div className="h-2 w-2 rounded-full bg-[#5B8DBE] animate-pulse" />
-                                <span className="text-[#5B8DBE] font-bold uppercase tracking-widest text-[10px]">Contrataciones</span>
-                            </div>
-                            <h3 className="text-5xl font-black text-[#FFCC00] mb-2 tracking-tighter">
-                                <CountUp to={totalContractTons} />
-                            </h3>
-                            <p className="text-slate-300 font-medium text-base leading-tight">
-                                Toneladas Colocadas <br /> <span className="text-sm text-slate-500 font-normal">{contracts.length} Contrato{contracts.length !== 1 ? 's' : ''} Ejecutado{contracts.length !== 1 ? 's' : ''}</span>
-                            </p>
-                        </div>
-                    </motion.div>
-
-                    {/* Card 3: Plant Production */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.7, type: 'spring' }}
-                        className="col-span-2 bg-white/5 backdrop-blur-md border border-white/10 p-5 rounded-[2rem] hover:bg-white/10 transition-all group"
-                    >
-                         <div className="flex flex-col justify-center h-full">
-                            <h4 className="text-[#FFCC00] font-bold uppercase tracking-widest text-[11px] mb-1">Producción Mensual</h4>
-                            <h3 className="text-3xl font-black text-white mb-1 tracking-tighter">
-                                <CountUp to={1200} /><span className="text-slate-500 text-sm ml-1 font-bold">Tons</span>
-                            </h3>
-                        </div>
-                    </motion.div>
-
-                    {/* Card 4: Localities */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 0 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.8, type: 'spring' }}
-                         className="col-span-2 bg-white/5 backdrop-blur-md border border-white/10 p-5 rounded-[2rem] hover:bg-white/10 transition-all group"
-                    >
-                         <div className="flex flex-col justify-center h-full">
-                            <h4 className="text-[#FFCC00] font-bold uppercase tracking-widest text-[11px] mb-1">Localidades</h4>
-                            <h3 className="text-3xl font-black text-white mb-1 tracking-tighter">
-                                <CountUp to={25} />
-                            </h3>
-                            <p className="text-slate-400 text-xs font-medium">Sectores Atendidos</p>
-                        </div>
-                    </motion.div>
-
-                    {/* Card 5: Years of institutional history */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.9, type: 'spring' }}
-                         className="col-span-2 bg-white/5 backdrop-blur-md border border-white/10 p-5 rounded-[2rem] hover:bg-white/10 transition-all group"
-                    >
-                         <div className="flex flex-col justify-center h-full">
-                            <h4 className="text-[#FFCC00] font-bold uppercase tracking-widest text-[11px] mb-1">Años</h4>
-                            <h3 className="text-3xl font-black text-[#FFCC00] mb-1 tracking-tighter">
-                                <CountUp to={17} />
-                            </h3>
-                            <p className="text-slate-400 text-xs font-medium">Transformando Sotillo</p>
-                        </div>
-                    </motion.div>
-
-                 </div>
-            </div>
-        </div>
       </div>
       
       {/* Bottom Scroll Indicator */}

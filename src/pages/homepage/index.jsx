@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 import Header from '../../components/ui/Header';
 import Footer from '../../components/ui/Footer';
 import HeroSection from './components/HeroSection';
+import StatsSection from './components/StatsSection';
 import AsphaltPlantSection from './components/AsphaltPlantSection';
 import BentoGrid from './components/BentoGrid';
 import FeaturedProjects from './components/FeaturedProjects';
@@ -38,9 +39,10 @@ const Homepage = () => {
 
         <Header />
 
-        <main className="pt-16 lg:pt-20">
+        <main>
           <AnniversaryModal />
           <HeroSection />
+          <StatsSection />
           <InstitutionalAlliances />
           <AsphaltPlantSection />
           <BentoGrid />
