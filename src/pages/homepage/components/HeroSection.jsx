@@ -85,7 +85,7 @@ const HeroSection = () => {
           </motion.div>
 
           {/* Columna derecha — bento de indicadores */}
-          <div className="space-y-3.5">
+          <div className="space-y-3.5 lg:space-y-3">
 
             {/* Asfaltado en Caliente — tarjeta principal */}
             <motion.div
@@ -112,7 +112,7 @@ const HeroSection = () => {
             <div className="grid grid-cols-2 gap-4">
               <motion.div
                 {...pop(0.22)}
-                className={`${GLASS_CARD} p-5 hover:bg-white/10 transition-colors flex flex-col justify-between gap-3 min-h-[7rem]`}
+                className={`${GLASS_CARD} p-5 hover:bg-white/10 transition-colors flex flex-col justify-between gap-2.5 lg:min-h-[6rem] min-h-[7rem]`}
               >
                 <span className="text-accent font-bold uppercase tracking-widest text-[10px]">Año 2025</span>
                 <div>
@@ -124,7 +124,7 @@ const HeroSection = () => {
               </motion.div>
               <motion.div
                 {...pop(0.28)}
-                className={`${GLASS_CARD} p-5 hover:bg-white/10 transition-colors flex flex-col justify-between gap-3 min-h-[7rem]`}
+                className={`${GLASS_CARD} p-5 hover:bg-white/10 transition-colors flex flex-col justify-between gap-2.5 lg:min-h-[6rem] min-h-[7rem]`}
               >
                 <span className="text-accent font-bold uppercase tracking-widest text-[10px]">Año 2026</span>
                 <div>
@@ -140,7 +140,7 @@ const HeroSection = () => {
             <div className="grid grid-cols-2 gap-4">
               <motion.div
                 {...pop(0.34)}
-                className={`${GLASS_CARD} p-5 hover:bg-white/10 transition-colors flex flex-col justify-between gap-3 min-h-[7rem]`}
+                className={`${GLASS_CARD} p-5 hover:bg-white/10 transition-colors flex flex-col justify-between gap-2.5 lg:min-h-[6rem] min-h-[7rem]`}
               >
                 <span className="text-accent font-bold uppercase tracking-widest text-[10px]">Asfaltado en Frío</span>
                 <div>
@@ -153,7 +153,7 @@ const HeroSection = () => {
               </motion.div>
               <motion.div
                 {...pop(0.4)}
-                className={`${GLASS_CARD} p-5 hover:bg-white/10 transition-colors flex flex-col justify-between gap-3 min-h-[7rem]`}
+                className={`${GLASS_CARD} p-5 hover:bg-white/10 transition-colors flex flex-col justify-between gap-2.5 lg:min-h-[6rem] min-h-[7rem]`}
               >
                 <span className="text-accent font-bold uppercase tracking-widest text-[10px]">Ripio Compactado</span>
                 <div>
@@ -166,46 +166,51 @@ const HeroSection = () => {
               </motion.div>
             </div>
 
-            {/* Contrataciones */}
-            <motion.div {...fade(0.46)} className="flex items-center gap-2.5 pt-1">
-              <div className="h-2 w-2 rounded-full bg-[#5B8DBE] animate-pulse" />
-              <span className="text-[#7BA8D4] font-bold uppercase tracking-widest text-[11px]">Contrataciones</span>
-              <span className="text-slate-400 text-xs">· Obras bajo contrato</span>
-            </motion.div>
+            {/* Contrataciones — módulo propio, para que la etiqueta se lea sobre vidrio y no sobre la foto */}
+            <motion.div
+              {...fade(0.46)}
+              className="rounded-[2rem] border border-[#5B8DBE]/25 bg-[#3E5F86]/[0.22] backdrop-blur-md p-3.5 space-y-3"
+            >
+              <div className="flex items-center gap-2.5 px-1">
+                <div className="h-2 w-2 rounded-full bg-[#8FC0E9] animate-pulse" />
+                <span className="text-white font-bold uppercase tracking-widest text-[11px]">Contrataciones</span>
+                <span className="text-slate-200/90 text-xs font-medium">· Obras bajo contrato</span>
+              </div>
 
-            <div className="grid grid-cols-2 gap-4">
-              <motion.div
-                {...pop(0.5)}
-                className={`${DARK_CARD} p-5 group hover:border-[#5B8DBE]/40 transition-colors flex flex-col justify-between gap-3 min-h-[7.5rem]`}
-              >
-                <span className="text-[#7BA8D4] font-bold uppercase tracking-widest text-[10px]">{heroFrenteA.front}</span>
-                <div>
-                  <p className="text-3xl font-black text-[#FFCC00] tracking-tight leading-none">
-                    <CountUp to={heroFrenteA.tons} />
-                    <span className="text-slate-400 text-sm ml-1.5 font-bold">Ton</span>
-                  </p>
-                  <p className="mt-1.5 text-xs text-slate-400 font-medium">Contrato {heroFrenteA.contractNumber}</p>
-                </div>
-              </motion.div>
-              {frenteB && (
+              <div className="grid grid-cols-2 gap-3">
                 <motion.div
-                  {...pop(0.56)}
-                  className={`${DARK_CARD} p-5 group hover:border-[#5B8DBE]/40 transition-colors flex flex-col justify-between gap-3 min-h-[7.5rem]`}
+                  {...pop(0.5)}
+                  className="rounded-[1.4rem] border border-white/10 bg-gradient-to-br from-slate-900/90 to-black/90 p-4 hover:border-[#5B8DBE]/40 transition-colors flex flex-col justify-between gap-2.5 min-h-[7rem]"
                 >
-                  <span className="text-[#7BA8D4] font-bold uppercase tracking-widest text-[10px]">{frenteB.front}</span>
+                  <span className="text-[#A9CDEC] font-bold uppercase tracking-widest text-[10px]">{heroFrenteA.front}</span>
                   <div>
                     <p className="text-3xl font-black text-[#FFCC00] tracking-tight leading-none">
-                      <CountUp to={frenteB.tons} />
+                      <CountUp to={heroFrenteA.tons} />
                       <span className="text-slate-400 text-sm ml-1.5 font-bold">Ton</span>
                     </p>
-                    <p className="mt-1.5 text-xs text-slate-400 font-medium">
-                      Contrato {frenteB.contractNumber}
-                      <span className="block text-slate-500">PDVSA · TAECJAA</span>
-                    </p>
+                    <p className="mt-1.5 text-xs text-slate-300 font-medium">Contrato {heroFrenteA.contractNumber}</p>
                   </div>
                 </motion.div>
-              )}
-            </div>
+                {frenteB && (
+                  <motion.div
+                    {...pop(0.56)}
+                    className="rounded-[1.4rem] border border-white/10 bg-gradient-to-br from-slate-900/90 to-black/90 p-4 hover:border-[#5B8DBE]/40 transition-colors flex flex-col justify-between gap-2.5 min-h-[7rem]"
+                  >
+                    <span className="text-[#A9CDEC] font-bold uppercase tracking-widest text-[10px]">{frenteB.front}</span>
+                    <div>
+                      <p className="text-3xl font-black text-[#FFCC00] tracking-tight leading-none">
+                        <CountUp to={frenteB.tons} />
+                        <span className="text-slate-400 text-sm ml-1.5 font-bold">Ton</span>
+                      </p>
+                      <p className="mt-1.5 text-xs text-slate-300 font-medium">
+                        Contrato {frenteB.contractNumber}
+                        <span className="block text-slate-400">PDVSA · TAECJAA</span>
+                      </p>
+                    </div>
+                  </motion.div>
+                )}
+              </div>
+            </motion.div>
           </div>
         </div>
       </div>
