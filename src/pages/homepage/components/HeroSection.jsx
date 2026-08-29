@@ -87,53 +87,50 @@ const HeroSection = () => {
           {/* Columna derecha — bento de indicadores */}
           <div className="space-y-3.5 lg:space-y-3">
 
-            {/* Asfaltado en Caliente — tarjeta principal */}
-            <motion.div
-              {...pop(0.15)}
-              className={`${DARK_CARD} p-5 lg:p-6 group hover:border-accent/30 transition-colors`}
-            >
-              <div className="flex items-center gap-2 mb-3">
-                <div className="h-2 w-2 rounded-full bg-accent animate-pulse" />
-                <span className="text-accent font-bold uppercase tracking-widest text-[10px]">Asfaltado en Caliente</span>
-              </div>
-              <h3 className="text-5xl font-black text-white tracking-tight">
-                <CountUp to={hotAsphalt.totalTons} />
-                <span className="text-slate-400 text-lg ml-2 font-bold">Ton</span>
-              </h3>
-              <p className="mt-2.5 text-slate-300 font-medium text-sm leading-tight">
-                Toneladas Colocadas
-                <span className="block text-xs text-slate-500 font-normal mt-0.5">
-                  Gestión Dr. Jesús Marcano · Desde {hotAsphalt.since}
-                </span>
-              </p>
-            </motion.div>
-
-            {/* Año 2025 / Año 2026 */}
-            <div className="grid grid-cols-2 gap-4">
+            {/* Asfaltado en Caliente (2/3) + Año 2025 / 2026 apilados (1/3) */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 lg:gap-3">
               <motion.div
-                {...pop(0.22)}
-                className={`${GLASS_CARD} p-5 hover:bg-white/10 transition-colors flex flex-col justify-between gap-2.5 lg:min-h-[6rem] min-h-[7rem]`}
+                {...pop(0.15)}
+                className={`${DARK_CARD} p-5 lg:p-6 sm:col-span-2 group hover:border-accent/30 transition-colors`}
               >
-                <span className="text-accent font-bold uppercase tracking-widest text-[10px]">Año 2025</span>
-                <div>
-                  <p className="text-3xl font-black text-white tracking-tight leading-none">
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="h-2 w-2 rounded-full bg-accent animate-pulse" />
+                  <span className="text-accent font-bold uppercase tracking-wider text-xs">Asfaltado en Caliente</span>
+                </div>
+                <h3 className="text-5xl font-black text-white tracking-tight">
+                  <CountUp to={hotAsphalt.totalTons} />
+                  <span className="text-slate-400 text-lg ml-2 font-bold">Ton</span>
+                </h3>
+                <p className="mt-2.5 text-slate-300 font-medium text-sm leading-tight">
+                  Toneladas Colocadas
+                  <span className="block text-xs text-slate-500 font-normal mt-0.5">
+                    Gestión Dr. Jesús Marcano · Desde {hotAsphalt.since}
+                  </span>
+                </p>
+              </motion.div>
+
+              <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-1 sm:grid-rows-2 lg:gap-3">
+                <motion.div
+                  {...pop(0.22)}
+                  className={`${GLASS_CARD} p-4 hover:bg-white/10 transition-colors flex flex-col justify-center`}
+                >
+                  <span className="text-accent font-bold uppercase tracking-wider text-xs">Año 2025</span>
+                  <p className="mt-2 text-2xl font-black text-white tracking-tight leading-none">
                     <CountUp to={hotAsphalt.year2025Tons} />
                   </p>
-                  <p className="mt-1.5 text-slate-300 text-xs font-medium">Total del año</p>
-                </div>
-              </motion.div>
-              <motion.div
-                {...pop(0.28)}
-                className={`${GLASS_CARD} p-5 hover:bg-white/10 transition-colors flex flex-col justify-between gap-2.5 lg:min-h-[6rem] min-h-[7rem]`}
-              >
-                <span className="text-accent font-bold uppercase tracking-widest text-[10px]">Año 2026</span>
-                <div>
-                  <p className="text-3xl font-black text-white tracking-tight leading-none">
+                  <p className="mt-1 text-slate-300 text-xs font-medium">Total del año</p>
+                </motion.div>
+                <motion.div
+                  {...pop(0.28)}
+                  className={`${GLASS_CARD} p-4 hover:bg-white/10 transition-colors flex flex-col justify-center`}
+                >
+                  <span className="text-accent font-bold uppercase tracking-wider text-xs">Año 2026</span>
+                  <p className="mt-2 text-2xl font-black text-white tracking-tight leading-none">
                     <CountUp to={hotAsphalt.year2026Tons} />
                   </p>
-                  <p className="mt-1.5 text-slate-300 text-xs font-medium">{hotAsphalt.year2026PeriodLabel}</p>
-                </div>
-              </motion.div>
+                  <p className="mt-1 text-slate-300 text-xs font-medium">{hotAsphalt.year2026PeriodLabel}</p>
+                </motion.div>
+              </div>
             </div>
 
             {/* Asfaltado en Frío / Ripio Compactado */}
@@ -142,7 +139,7 @@ const HeroSection = () => {
                 {...pop(0.34)}
                 className={`${GLASS_CARD} p-5 hover:bg-white/10 transition-colors flex flex-col justify-between gap-2.5 lg:min-h-[6rem] min-h-[7rem]`}
               >
-                <span className="text-accent font-bold uppercase tracking-widest text-[10px]">Asfaltado en Frío</span>
+                <span className="text-accent font-bold uppercase tracking-wider text-xs">Asfaltado en Frío</span>
                 <div>
                   <p className="text-3xl font-black text-white tracking-tight leading-none">
                     <CountUp to={coldAsphalt.year2026Tons} />
@@ -155,7 +152,7 @@ const HeroSection = () => {
                 {...pop(0.4)}
                 className={`${GLASS_CARD} p-5 hover:bg-white/10 transition-colors flex flex-col justify-between gap-2.5 lg:min-h-[6rem] min-h-[7rem]`}
               >
-                <span className="text-accent font-bold uppercase tracking-widest text-[10px]">Ripio Compactado</span>
+                <span className="text-accent font-bold uppercase tracking-wider text-xs">Ripio Compactado</span>
                 <div>
                   <p className="text-3xl font-black text-white tracking-tight leading-none">
                     <CountUp to={compactedGravelPlan.year2026Tons} />
@@ -173,7 +170,7 @@ const HeroSection = () => {
             >
               <div className="flex items-center gap-2.5 px-1">
                 <div className="h-2 w-2 rounded-full bg-[#8FC0E9] animate-pulse" />
-                <span className="text-white font-bold uppercase tracking-widest text-[11px]">Contrataciones</span>
+                <span className="text-white font-bold uppercase tracking-wider text-[13px]">Contrataciones</span>
                 <span className="text-slate-200/90 text-xs font-medium">· Obras bajo contrato</span>
               </div>
 
@@ -182,7 +179,7 @@ const HeroSection = () => {
                   {...pop(0.5)}
                   className="rounded-[1.4rem] border border-white/10 bg-gradient-to-br from-slate-900/90 to-black/90 p-4 hover:border-[#5B8DBE]/40 transition-colors flex flex-col justify-between gap-2.5 min-h-[7rem]"
                 >
-                  <span className="text-[#A9CDEC] font-bold uppercase tracking-widest text-[10px]">{heroFrenteA.front}</span>
+                  <span className="text-[#A9CDEC] font-bold uppercase tracking-wider text-xs">{heroFrenteA.front}</span>
                   <div>
                     <p className="text-3xl font-black text-[#FFCC00] tracking-tight leading-none">
                       <CountUp to={heroFrenteA.tons} />
@@ -196,7 +193,7 @@ const HeroSection = () => {
                     {...pop(0.56)}
                     className="rounded-[1.4rem] border border-white/10 bg-gradient-to-br from-slate-900/90 to-black/90 p-4 hover:border-[#5B8DBE]/40 transition-colors flex flex-col justify-between gap-2.5 min-h-[7rem]"
                   >
-                    <span className="text-[#A9CDEC] font-bold uppercase tracking-widest text-[10px]">{frenteB.front}</span>
+                    <span className="text-[#A9CDEC] font-bold uppercase tracking-wider text-xs">{frenteB.front}</span>
                     <div>
                       <p className="text-3xl font-black text-[#FFCC00] tracking-tight leading-none">
                         <CountUp to={frenteB.tons} />
