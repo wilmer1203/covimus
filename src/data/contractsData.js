@@ -15,7 +15,7 @@
  *  - facility       : instalación / sitio donde se ejecutó (nombre completo).
  *  - facilityShort  : versión corta para tarjetas (sigla o nombre breve).
  *  - tons           : toneladas colocadas, numérico, para los totales del sitio.
- *  - tonsLabel      : el mismo dato formateado para mostrar (ej. "1,997 Ton").
+ *  - tonsLabel      : el mismo dato formateado para mostrar (ej. "5,000 Ton").
  *  - startDate / endDate : "DD/MM/YYYY" o null si no está confirmada.
  *                      NUNCA inventar una fecha — misma regla que aplica
  *                      add-project con las coordenadas de projectsData.js.
@@ -28,7 +28,7 @@
 export const contracts = [
   {
     id: 1,
-    contractNumber: "4600143652",
+    contractNumber: "4600143651",
     front: "Frente B",
     name: "Adecuación de vialidad y drenajes del Terminal de Almacenamiento y Embarque de Crudo José Antonio Anzoátegui (TAECJAA)",
     client: "PDVSA",
@@ -36,11 +36,11 @@ export const contracts = [
     facilityShort: "TAECJAA",
     sector: "Industrial / Petrolero",
     description:
-      "Colocación de 1,997 toneladas de mezcla asfáltica en caliente, con demarcación y señalización de la calle de servicio, el acceso para vehículos pesados y la calle D.",
+      "Colocación de 5,000 toneladas de mezcla asfáltica en caliente, con demarcación y señalización de la calle de servicio, el acceso para vehículos pesados y la calle D.",
     fullDescription:
-      "En el marco del contrato N° 4600143652, correspondiente al Frente B, se llevó a cabo la colocación de 1,997 toneladas en el proyecto de denominación “Adecuación de vialidad y drenajes del Terminal de Almacenamiento y Embarque de Crudo José Antonio Anzoátegui (TAECJAA)”. Además, se ejecutaron diversas actividades complementarias, entre las que destacan la organización y limpieza del área de trabajo. Se realizó con éxito la demarcación y señalización de la calle de servicio, el acceso para vehículos pesados y la calle D. Estas labores contribuyen a mejorar la funcionalidad, seguridad y orden en las instalaciones del terminal.",
-    tons: 1997,
-    tonsLabel: "1,997 Ton",
+      "En el marco del contrato N° 4600143651, correspondiente al Frente B, se llevó a cabo la colocación de 5,000 toneladas en el proyecto de denominación “Adecuación de vialidad y drenajes del Terminal de Almacenamiento y Embarque de Crudo José Antonio Anzoátegui (TAECJAA)”. Además, se ejecutaron diversas actividades complementarias, entre las que destacan la organización y limpieza del área de trabajo. Se realizó con éxito la demarcación y señalización de la calle de servicio, el acceso para vehículos pesados y la calle D. Estas labores contribuyen a mejorar la funcionalidad, seguridad y orden en las instalaciones del terminal.",
+    tons: 5000,
+    tonsLabel: "5,000 Ton",
     scope: "Calle de servicio, acceso de vehículos pesados y calle D",
     activities: [
       "Instalación de señales de identificación en edificios.",

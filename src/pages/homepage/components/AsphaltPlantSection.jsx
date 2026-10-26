@@ -28,7 +28,7 @@ const AsphaltPlantSection = () => {
   ];
 
   return (
-    <section className="py-12 lg:py-24 relative overflow-hidden">
+    <section id="planta-asfalto" className="py-12 lg:py-24 relative overflow-hidden">
       {/* Background Image & Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
