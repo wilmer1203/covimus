@@ -17,17 +17,17 @@
 export const hotAsphalt = {
   totalTons: 9747, // dato real, ya se mostraba en el hero
   since: "09/09/2025",
-  year2025Tons: 6500, // INVENTADO — reemplazar con dato real
-  year2026Tons: 3247, // INVENTADO — reemplazar con dato real
+  year2025Tons: 9798, // dato real (gerencia)
+  year2026Tons: 3140, // dato real (gerencia)
   year2026PeriodLabel: "Enero - Agosto 2026",
 };
 
 export const coldAsphalt = {
-  year2026Tons: 850, // INVENTADO — reemplazar con dato real
+  year2026Tons: 20.72, // dato real (gerencia) — 20.723 Kg colocados en 2026
 };
 
 export const compactedGravelPlan = {
-  year2026Tons: 620, // INVENTADO — reemplazar con dato real
+  year2026M3: 259, // dato real (gerencia) — unidad es M3, no toneladas
 };
 
 export const heroFrenteA = {

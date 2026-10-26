@@ -9,12 +9,14 @@ import { motion, useSpring, useTransform, useInView, useReducedMotion } from 'fr
  * la página (screenshots, prerender de SEO, auditorías) en vez de agarrar el
  * número a mitad de la animación.
  */
-const CountUp = ({ to, duration = 2, className, locale = 'es-VE' }) => {
+const CountUp = ({ to, duration = 2, className, locale = 'es-VE', decimals = 0 }) => {
   const ref = React.useRef(null);
   const inView = useInView(ref, { once: true });
   const prefersReducedMotion = useReducedMotion();
   const spring = useSpring(0, { duration: duration * 1000, bounce: 0 });
-  const display = useTransform(spring, (current) => Math.round(current).toLocaleString(locale));
+  const format = (value) =>
+    value.toLocaleString(locale, { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
+  const display = useTransform(spring, (current) => format(current));
 
   React.useEffect(() => {
     if (inView) {
@@ -23,7 +25,7 @@ const CountUp = ({ to, duration = 2, className, locale = 'es-VE' }) => {
   }, [inView, to, spring]);
 
   if (prefersReducedMotion) {
-    return <span ref={ref} className={className}>{to.toLocaleString(locale)}</span>;
+    return <span ref={ref} className={className}>{format(to)}</span>;
   }
 
   return <motion.span ref={ref} className={className}>{display}</motion.span>;

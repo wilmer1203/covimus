@@ -1,13 +1,15 @@
 import React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { contracts } from '../../../data/contractsData';
-import { hotAsphalt, coldAsphalt, compactedGravelPlan, heroFrenteA } from '../../../data/asphaltStatsData';
+import { hotAsphalt, coldAsphalt, compactedGravelPlan } from '../../../data/asphaltStatsData';
 import CountUp from './CountUp';
 
 const frenteB = contracts.find((contract) => contract.front === 'Frente B');
 
+// Frente A (heroFrenteA en asphaltStatsData.js) queda oculto hasta tener su
+// dato real — por ahora solo se muestra Frente B. Cuando llegue el dato,
+// reagregar esa entrada aquí.
 const frentes = [
-  { front: heroFrenteA.front, tons: heroFrenteA.tons, contract: heroFrenteA.contractNumber, note: null },
   frenteB && { front: frenteB.front, tons: frenteB.tons, contract: frenteB.contractNumber, note: 'PDVSA · TAECJAA' },
 ].filter(Boolean);
 
@@ -156,8 +158,8 @@ const AsphaltProgressSection = () => {
             {/* Asfaltado en Frío / Plan con Ripio — apiladas, al lado */}
             <div className="grid grid-cols-2 gap-4 sm:h-full sm:grid-cols-1 sm:grid-rows-2 lg:col-span-1 lg:gap-5">
               {[
-                { label: 'Asfaltado en Frío', value: coldAsphalt.year2026Tons, delay: 0.24 },
-                { label: 'Plan con Ripio', value: compactedGravelPlan.year2026Tons, delay: 0.3 },
+                { label: 'Asfaltado en Frío', value: coldAsphalt.year2026Tons, unit: 'Ton', decimals: 2, delay: 0.24 },
+                { label: 'Plan con Ripio', value: compactedGravelPlan.year2026M3, unit: 'M3', decimals: 0, delay: 0.3 },
               ].map((item) => (
                 <motion.div
                   key={item.label}
@@ -167,8 +169,8 @@ const AsphaltProgressSection = () => {
                   <span className="text-sm font-bold uppercase tracking-wider text-accent">{item.label}</span>
                   <div>
                     <p className="text-3xl font-black leading-none tracking-tight text-white">
-                      <CountUp to={item.value} />
-                      <span className="ml-1.5 text-sm font-bold text-slate-400">Ton</span>
+                      <CountUp to={item.value} decimals={item.decimals} />
+                      <span className="ml-1.5 text-sm font-bold text-slate-400">{item.unit}</span>
                     </p>
                     <p className="mt-1.5 text-xs font-medium text-slate-300">Suma total · Año 2026</p>
                   </div>
@@ -193,7 +195,7 @@ const AsphaltProgressSection = () => {
                 <motion.div
                   key={f.front}
                   {...pop(0.1 + i * 0.06)}
-                  className="flex items-center justify-between gap-4 rounded-[1.5rem] border border-white/10 bg-gradient-to-br from-slate-900/95 to-slate-950/95 p-5 transition-colors hover:border-[#5B8DBE]/45"
+                  className={`flex items-center justify-between gap-4 rounded-[1.5rem] border border-white/10 bg-gradient-to-br from-slate-900/95 to-slate-950/95 p-5 transition-colors hover:border-[#5B8DBE]/45 ${frentes.length === 1 ? 'sm:col-span-2' : ''}`}
                 >
                   <div>
                     <span className="text-sm font-bold uppercase tracking-wider text-[#A9CDEC]">{f.front}</span>
