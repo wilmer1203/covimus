@@ -14,11 +14,14 @@
  * leer el contrato real, igual que ya hace con el Frente B.
  */
 
+const year2025Tons = 9798; // dato real (gerencia)
+const year2026Tons = 3140; // dato real (gerencia)
+
 export const hotAsphalt = {
-  totalTons: 9747, // dato real, ya se mostraba en el hero
+  totalTons: year2025Tons + year2026Tons, // suma de Año 2025 + Año 2026
   since: "09/09/2025",
-  year2025Tons: 9798, // dato real (gerencia)
-  year2026Tons: 3140, // dato real (gerencia)
+  year2025Tons,
+  year2026Tons,
   year2026PeriodLabel: "Enero - Agosto 2026",
 };
 
