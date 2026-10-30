@@ -28,7 +28,7 @@
 export const contracts = [
   {
     id: 1,
-    contractNumber: "4600143651",
+    contractNumber: "4600143652",
     front: "Frente B",
     name: "Adecuación de vialidad y drenajes del Terminal de Almacenamiento y Embarque de Crudo José Antonio Anzoátegui (TAECJAA)",
     client: "PDVSA",
@@ -38,7 +38,7 @@ export const contracts = [
     description:
       "Colocación de 5,000 toneladas de mezcla asfáltica en caliente, con demarcación y señalización de la calle de servicio, el acceso para vehículos pesados y la calle D.",
     fullDescription:
-      "En el marco del contrato N° 4600143651, correspondiente al Frente B, se llevó a cabo la colocación de 5,000 toneladas en el proyecto de denominación “Adecuación de vialidad y drenajes del Terminal de Almacenamiento y Embarque de Crudo José Antonio Anzoátegui (TAECJAA)”. Además, se ejecutaron diversas actividades complementarias, entre las que destacan la organización y limpieza del área de trabajo. Se realizó con éxito la demarcación y señalización de la calle de servicio, el acceso para vehículos pesados y la calle D. Estas labores contribuyen a mejorar la funcionalidad, seguridad y orden en las instalaciones del terminal.",
+      "En el marco del contrato N° 4600143652, correspondiente al Frente B, se llevó a cabo la colocación de 5,000 toneladas en el proyecto de denominación “Adecuación de vialidad y drenajes del Terminal de Almacenamiento y Embarque de Crudo José Antonio Anzoátegui (TAECJAA)”. Además, se ejecutaron diversas actividades complementarias, entre las que destacan la organización y limpieza del área de trabajo. Se realizó con éxito la demarcación y señalización de la calle de servicio, el acceso para vehículos pesados y la calle D. Estas labores contribuyen a mejorar la funcionalidad, seguridad y orden en las instalaciones del terminal.",
     tons: 5000,
     tonsLabel: "5,000 Ton",
     scope: "Calle de servicio, acceso de vehículos pesados y calle D",
@@ -69,6 +69,30 @@ export const contracts = [
     image: "/assets/images/ima_contratos/2026/TAECJAA_Frente_B/taecjaa-frente-b-01.webp",
     imageAlt:
       "Vialidad adecuada con mezcla asfáltica en caliente y demarcación en el TAECJAA",
+  },
+  {
+    id: 2,
+    contractNumber: "4600143651",
+    front: "Frente A",
+    name: "Adecuación de vialidad y drenajes del Terminal de Almacenamiento y Embarque de Crudo José Antonio Anzoátegui (TAECJAA)",
+    client: "PDVSA",
+    facility: "Terminal de Almacenamiento y Embarque de Crudo José Antonio Anzoátegui (TAECJAA)",
+    facilityShort: "TAECJAA",
+    sector: "Industrial / Petrolero",
+    description:
+      "Colocación de 5,000 toneladas de mezcla asfáltica en caliente en el proyecto “Adecuación de vialidad y drenajes del Terminal de Almacenamiento y Embarque de Crudo José Antonio Anzoátegui (TAECJAA)”.",
+    fullDescription:
+      "En el marco del contrato N° 4600143651, correspondiente al Frente A, se llevó a cabo la colocación de 5,000 toneladas de mezcla asfáltica en caliente en el proyecto “Adecuación de vialidad y drenajes del Terminal de Almacenamiento y Embarque de Crudo José Antonio Anzoátegui (TAECJAA)”, en las instalaciones del terminal.",
+    tons: 5000,
+    tonsLabel: "5,000 Ton",
+    activities: ["Colocación de mezcla asfáltica en caliente."],
+    status: "completed",
+    year: null,
+    startDate: null,
+    endDate: null,
+    images: [],
+    image: "",
+    imageAlt: "",
   },
 ];
 

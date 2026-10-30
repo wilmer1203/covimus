@@ -4,14 +4,12 @@ import { contracts } from '../../../data/contractsData';
 import { hotAsphalt, coldAsphalt, compactedGravelPlan } from '../../../data/asphaltStatsData';
 import CountUp from './CountUp';
 
+const frenteA = contracts.find((contract) => contract.front === 'Frente A');
 const frenteB = contracts.find((contract) => contract.front === 'Frente B');
 
-// Frente A (heroFrenteA en asphaltStatsData.js) queda oculto hasta tener su
-// dato real — por ahora solo se muestra Frente B. Cuando llegue el dato,
-// reagregar esa entrada aquí.
-const frentes = [
-  frenteB && { front: frenteB.front, tons: frenteB.tons, contract: frenteB.contractNumber, note: 'PDVSA · TAECJAA' },
-].filter(Boolean);
+const frentes = [frenteA, frenteB]
+  .filter(Boolean)
+  .map((c) => ({ front: c.front, tons: c.tons, contract: c.contractNumber, name: c.name }));
 
 // Mismo lenguaje de tarjetas que el Hero de la Variante A.
 const DARK_CARD =
@@ -195,12 +193,12 @@ const AsphaltProgressSection = () => {
                 <motion.div
                   key={f.front}
                   {...pop(0.1 + i * 0.06)}
-                  className={`flex items-center justify-between gap-4 rounded-[1.5rem] border border-white/10 bg-gradient-to-br from-slate-900/95 to-slate-950/95 p-5 transition-colors hover:border-[#5B8DBE]/45 ${frentes.length === 1 ? 'sm:col-span-2' : ''}`}
+                  className={`flex items-start justify-between gap-4 rounded-[1.5rem] border border-white/10 bg-gradient-to-br from-slate-900/95 to-slate-950/95 p-5 transition-colors hover:border-[#5B8DBE]/45 ${frentes.length === 1 ? 'sm:col-span-2' : ''}`}
                 >
-                  <div>
-                    <span className="text-sm font-bold uppercase tracking-wider text-[#A9CDEC]">{f.front}</span>
-                    <p className="mt-1.5 text-xs font-medium text-slate-300">Contrato {f.contract}</p>
-                    {f.note && <p className="text-xs font-medium text-slate-400">{f.note}</p>}
+                  <div className="min-w-0 flex-1">
+                    <span className="text-sm font-bold uppercase tracking-wider text-[#A9CDEC]">Contrato N° {f.contract}</span>
+                    {f.name && <p className="mt-1.5 text-xs font-medium leading-snug text-slate-300">{f.name}</p>}
+                    <p className="mt-1.5 text-xs font-bold uppercase tracking-wide text-slate-400">{f.front}</p>
                   </div>
                   <p className="shrink-0 text-4xl font-black leading-none tracking-tight text-[#FFCC00] lg:text-5xl">
                     <CountUp to={f.tons} />
