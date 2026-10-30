@@ -25,20 +25,20 @@ const HeroSection = () => {
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
-        <div className="max-w-3xl space-y-8">
+        <div className="max-w-4xl mx-auto space-y-8 text-center">
           <motion.div {...rise} transition={{ duration: 0.8, ease: EASE }}>
-            <div className="mb-6">
+            <div className="mb-6 flex flex-col items-center">
               <span className="text-accent text-sm font-bold tracking-[0.2em] uppercase">E.P.S. COVIMUS S.A.</span>
               <div className="mt-2 h-px w-8 bg-accent" />
             </div>
 
-            <h1 className="text-4xl md:text-6xl font-black text-white leading-[0.95] tracking-tight mb-6">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[0.95] tracking-tight mb-6">
               TRANSFORMANDO <br />
               LA <span className="text-accent">VIALIDAD</span> <br />
               DE SOTILLO
             </h1>
 
-            <p className="text-lg md:text-xl text-white/80 max-w-xl leading-relaxed font-light">
+            <p className="text-lg md:text-xl lg:text-2xl text-white/80 max-w-xl mx-auto leading-relaxed font-light">
               Ejecución de proyectos de ingeniería civil y asfaltado bajo un modelo de gestión social
               eficiente. Construyendo el futuro de Puerto La Cruz.
             </p>
@@ -47,7 +47,7 @@ const HeroSection = () => {
           <motion.div
             {...rise}
             transition={{ delay: 0.35, duration: 0.8, ease: EASE }}
-            className="flex flex-col sm:flex-row gap-4 pt-4"
+            className="flex flex-col sm:flex-row gap-4 pt-4 justify-center"
           >
             <Link to="/projects">
               <button className="w-full sm:w-auto px-8 py-4 bg-accent hover:bg-yellow-400 text-slate-900 font-bold rounded-none flex items-center justify-center gap-3 transition-all uppercase tracking-wider group">
